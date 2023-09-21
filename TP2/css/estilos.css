@@ -1,0 +1,62 @@
+:root {
+    --primarioL3:#A1C2DB;
+    --primarioL2:#6B90AD;
+    --primarioL1:#016EC2;
+    --primario:#045593;
+    --primarioS1:#014171;
+    --primarioS2:#023052;
+    --primarioS3:#111A2A;
+    --secundarioL3:#E0D4F8;
+    --secundarioL2:#C5A7FF;
+    --secundarioL1:#9A65FF;
+    --secundario:#7844DC;
+    --secundarioS1:#5831A2;
+    --secundarioS2:#472686;
+    --secundarioS3: #1F123A;
+    --acentoL3:#F6C9F4;
+    --acentoL2:#F6A2F3;
+    --acentoL1:#F373EE;
+    --acento:#F24BEB;
+    --acentoS1:#D93FD3;
+    --acentoS2:#9F1E9A;
+    --acentoS3:#550251;
+    --blanco:#FAF8FF;
+    --negro: #0E071D;
+    --exito:#35F72B;
+    --alerta:#EC5151;
+    --banner:#282DE3;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+ background-color: var(--secundarioS3);
+}
+
+.container {
+    background-color: var(--negro);
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 300px;
+        background-color: var(--primarioS3);
+    }
+    
+    .container {
+        width: 1126px;
+        background-color:var(--negro);
+    }
+}
