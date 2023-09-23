@@ -35,6 +35,8 @@
 }
 
 body{
+    font-family: sans-serif;    
+    color: var(--primarioL3);
  background-color: var(--secundarioS3);
 }
 
@@ -46,15 +48,39 @@ body{
     body {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
-    footer {
+    .encabezado {
+        display: flex;
+        justify-content:  space-between;
+        height: 100px;
+        background-color: var(--primarioS1);
+    }
+
+    .contenedor-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+    }
+
+    .grid-footer {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 90% 10%;
         height: 300px;
         background-color: var(--primarioS3);
     }
     
+    .grid-fila-footer {
+        color: var(--secundarioS3);
+        text-align: center;
+        vertical-align: middle;
+        grid-column-start: 1;
+        grid-column-end: span 4;
+        background-color: var(--blanco);
+    }
     .container {
         width: 1126px;
         background-color:var(--negro);
