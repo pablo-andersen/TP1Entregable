@@ -37,7 +37,7 @@
 body{
     font-family: sans-serif;    
     color: var(--primarioL3);
- background-color: var(--secundarioS3);
+    background-color: var(--secundarioS3);
 }
 
 .container {
@@ -67,7 +67,7 @@ body{
 
     .grid-footer {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 40%;
         grid-template-rows: 90% 10%;
         height: 300px;
         background-color: var(--primarioS3);
@@ -81,6 +81,18 @@ body{
         grid-column-end: span 4;
         background-color: var(--blanco);
     }
+
+    .columna-footer {
+        text-align: center;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .columna-footer>h3 {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
     .container {
         width: 1126px;
         background-color:var(--negro);
