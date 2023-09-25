@@ -131,10 +131,25 @@ body{
         width: 1126px;
         background-color:var(--negro);
     }
+    
+    .carrusel-destacado{
+        
+        margin-top: 35px;
+        
+    }
+
+    .carrusel-destacado>ul>li {
+       display: flex;
+       justify-content: center;
+       
+       
+
+    }
 
     .card-destacada {
         display: flex;
         flex-direction: row;
+        
         width: 1040.27px;
         height: 425px;
         background-color:var(--primarioS2);
@@ -164,6 +179,11 @@ body{
         flex-wrap: nowrap;
     }
 
+    .titulo-carrusel-card{
+        margin-top: 50px;
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
     .card {
         display: flex;
         flex-direction: column;
