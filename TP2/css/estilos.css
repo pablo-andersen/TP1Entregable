@@ -97,4 +97,63 @@ body{
         width: 1126px;
         background-color:var(--negro);
     }
+
+    .card-destacada {
+        display: flex;
+        flex-direction: row;
+        width: 1040.27px;
+        height: 425px;
+        background-color:var(--primarioS2);
+    }
+
+    .imagen-card-destacada {
+        width: 639.05px;
+        height: 425px;
+    }
+
+    .texto-card-destacada{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .titulo-card-destacada {
+        width: 100%;
+        
+    }
+
+    .titulo-card-destacada {
+        width: 60%;
+    }
+
+    .boton-card-destacada {
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 235px;
+        height: 350px;
+        background-color:var(--primarioS2);
+        border-radius: 20px;
+
+    }
+    
+    .imagen-card {
+        width: 235px;
+        height: 170px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .texto-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+
 }
