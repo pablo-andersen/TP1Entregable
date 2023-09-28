@@ -26,6 +26,8 @@
     --alerta:#EC5151;
     --banner:#282DE3;
     --negro20op: rgba(14,7,29,0.2);
+    --negro55op: rgba(14,7,29,0.55);
+    --blanco75op: rgba(255,255,255,0.75);
 }
 
 *{
@@ -299,6 +301,13 @@ body{
     .boton-card {
         
     }
+
+    .titulo-principal{
+        width: 100%;
+        text-align: center;
+        margin: 50px 0px;
+    }
+
     .formulario-ingreso{
         display: flex;
     }
@@ -318,7 +327,8 @@ body{
         justify-content: center;
         align-items: center; 
         display: inline-flex;
-        opacity: 0.85; background: #9A65FF; box-shadow: 6px 6px 3px rgba(255, 255, 255, 0.75); border-radius: 20px;
+        opacity: 0.85; background: var(--secundarioL1); 
+        box-shadow: 6px 6px 3px var(--blanco75op); border-radius: 20px;
 
 
     }
@@ -330,8 +340,8 @@ body{
         padding-right: 25px; 
         padding-top: 15px; 
         padding-bottom: 15px; 
-        background: #F24BEB; 
-        box-shadow: 0px 4px 4px #016EC2; 
+        background: var(--acento); 
+        box-shadow: 0px 4px 4px var(--primarioL1); 
         border-radius: 30px; 
         overflow: hidden; 
         justify-content: center; 
@@ -339,7 +349,7 @@ body{
         gap: 10px; 
         display: inline-flex;
         text-align: center; 
-        color: #016EC2; 
+        color: var(--primarioL1); 
         font-size: 32px; 
         font-family: Rounded Mplus 1c Bold; 
         font-weight: 700; 
@@ -367,8 +377,61 @@ body{
         justify-content: center;
         align-items: center; 
         display: inline-flex;
-        opacity: 0.85; background: #9A65FF; box-shadow: 6px 6px 3px rgba(255, 255, 255, 0.75); border-radius: 20px;
+        opacity: 0.85; 
+        background: var(--secundarioL1); 
+        box-shadow: 6px 6px 3px var(--blanco75op); border-radius: 20px;
+        color: var(--blanco);
+        
+    }
 
+    .formulario-registro-completar label{
+       align-self: flex-start;
+       margin-top: 25px;
+       padding-left: 95px;
+       margin-bottom: 2px;
+    } 
+
+    .formulario-registro-completar input{
+        width: 250px;
+        height: 35px;
+        border-radius: 50px;
+        border: 2.5px solid var(--secundarioS1);
+        background-color: var(--primarioL3);
+        box-shadow: 4px 4px 4px 0px var(--negro55op);
+    }
+
+    .formulario-registro-completar p {
+        font-size: 9pt;
+    }
+
+    .requerido {
+        color: var(--alerta);
+    }
+
+    .botones-redes .link {
+        font-size: 1.5em;
+        padding-left: 5px;
+    }
+
+    .captcha{
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+        margin-bottom: 61px;
+    }
+    
+
+    .botones-redes{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .botones-redes img {
+        width: 199px;
+        height: 26px;
+        border-radius: 20px;
 
     }
     

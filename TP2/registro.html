@@ -34,41 +34,54 @@
                     <p>Inicio</p>
                 </div>
         </header>
-            <main class="formulario-registro">
-            
-                <form class="formulario-registro-contenedor">
+            <main>
+                <h1 class="titulo-principal">¡REGÍSTRATE Y DIVIÉRTETE!</h1>
+                <section class="formulario-registro">
+                    <form class="formulario-registro-contenedor">
 
-                    <div class="formulario-registro-completar">
+                        <div class="formulario-registro-completar">
 
-                        <label for=»nombre»> Nombre y Apellido: </label>
-                        
-                        <input type=»text» id=»nombre» required/>
+                            <label for=»nombre»> Nombre y Apellido: <span class="requerido">*</span></label>
+                            
+                            <input type=»text» id=»nombre» required/>
 
-                        <label for=»edad»> Edad: </label>
-                        
-                        <input type=»text» id=»edad» required/>
+                            <label for=»edad»> Edad: <span class="requerido">*</span></label>
+                            
+                            <input type=»text» id=»edad» required/>
 
-                        <label for=»correo»> Correo Electronico: </label>
+                            <label for=»correo»> Correo Electronico: <span class="requerido">*</span></label>
+                            
+                            <input type=»text» id=»correo» required/>
                         
-                        <input type=»text» id=»correo» required/>
-                    
-                        <label for=»user»> Nombre Usuario: </label>
-                        
-                        <input type=»text» id=»user» >
-                                        
-                        <label for=»contrasenia»> Contraseña: </label>
-                        
-                        <input type=»password» id=»contrasenia» required/>
-                        
-                        <label for=»repetir-contrasenia»> Repetir Contraseña: </label>
-                        
-                        <input type=»password» id=»repetir-contrasenia» required/>
-                        
-                        <button class="boton" type=»submit»> Registrar</button> 
-                    </div>
-                    
-                </form>
+                            <label for=»user»> Nombre Usuario: </label>
+                            
+                            <input type=»text» id=»user» >
+                                            
+                            <label for=»contrasenia»> Contraseña: <span class="requerido">*</span></label>
+                            
+                            <input type=»password» id=»contrasenia» required/>
+                            
+                            <p>Debe contener al menos 8 caracteres</p>
 
+                            <label for=»repetir-contrasenia»> Repetir Contraseña: <span class="requerido">*</span></label>
+                            
+                            <input type=»password» id=»repetir-contrasenia» required/>
+                            <img src="img/captcha.png" alt="captcha" class="captcha">
+
+                            <div class="botones-redes">
+                                <p>Tengo cuenta <span class="link">Iniciar Sesion</span> </p>
+                                <img src="img/IniciarFacebook.png" alt="iniciar sesion con Facebook">
+                                <img src="img/IniciarApple.png" alt="iniciar sesion con Appel">
+                                <img src="img/SeguirConGoogle.png" alt="iniciar sesion con Google">
+                            </div>
+                            
+                            <button class="boton" type=»submit»> Registrar</button> 
+
+                            <p>Ir al correo ingresado para verificar la cuenta</p>
+                        </div>
+                        
+                    </form>
+                </section>
             </main>
         <footer class="grid-footer">
             <div class="columna-footer">
