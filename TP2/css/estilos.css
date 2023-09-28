@@ -38,6 +38,7 @@
 }
 
 body{
+    width: 100vw;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 14px;
     font-weight: lighter;
@@ -51,6 +52,7 @@ body{
 
 @media only screen and (min-width: 600px) {
     body {
+        overflow-x: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
