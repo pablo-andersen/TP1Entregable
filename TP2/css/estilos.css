@@ -380,6 +380,11 @@ body{
         box-shadow: 4px 4px 4px 0px var(--negro55op);
     }
 
+    .formulario p {
+        font-size: 9pt;
+        color: var(--blanco);
+    }
+
     .formulario-registro-contenedor{
         width: 100%; 
         height: 100%;
