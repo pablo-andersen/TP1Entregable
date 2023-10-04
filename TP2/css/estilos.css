@@ -551,4 +551,55 @@ body{
         color: var(--blanco);
     }
 
+    .menu-general {
+        position: relative;
+        float: right;
+     } 
+     
+     ul.nav {
+        list-style: none;
+        display: block;
+        width: 300px;
+        position: relative;
+        top: 0px;
+        left: 100px;
+        padding: 0px 0px 0px 10px;
+        -webkit-background-size: 50% 100%;
+        -moz-background-size: 50% 100%;
+        -o-background-size: 50% 100%;
+     } 
+     
+     ul.nav li a {
+        width: 150px;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        background: var(--banner);
+        color: var(--blanco);
+        padding: 7px 15px 7px 15px;
+        -webkit-border-top-right-radius: 10px;
+        -moz-border-top-right-radius: 10px;
+        -o-border-top-right-radius: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        -moz-border-bottom-right-radius: 10px;
+        -o-border-bottom-right-radius: 10px;
+        -webkit-border-top-left-radius: 10px;
+        -moz-border-top-left-radius: 10px;
+        -o-border-top-left-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -moz-border-bottom-left-radius: 10px;
+        -o-border-bottom-left-radius: 10px;
+        display: block;
+        text-decoration: none;
+        -webkit-box-shadow: 5px 5px 5px var(--secundarioL1);
+        -moz-box-shadow: 5px 5px 5px var(--secundarioL1);
+        -o-box-shadow: 5px 5px 5px var(--secundarioL1);
+     } 
+     
+     ul.nav li a:hover {
+        background: var(--primarioS2);
+        color: var(--blanco75op);
+        padding: 7px 15px 7px 30px;
+     } 
+
 }
