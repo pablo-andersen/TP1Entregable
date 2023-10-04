@@ -242,6 +242,7 @@ body{
 
     .carrusel-slider{
         overflow-x: scroll;
+        scroll-snap-type: x mandatory;
     }
     
 
@@ -298,6 +299,7 @@ body{
         height: 350px;
         background-color:var(--primarioS2);
         border-radius: 20px;
+        scroll-snap-align: center;
     }
     
     .imagen-card {
