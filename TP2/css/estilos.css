@@ -159,6 +159,38 @@ body{
         padding-bottom: 10px;
         text-transform: uppercase;
     }
+ 
+    .nav-busqueda button{
+        padding-left: 5px;
+        background: none;
+        border: none;
+    }
+    .nav-busqueda button:hover {
+        animation-name: wiggle;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-direction: alternate;
+        animation-iteration-count: 3s;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+      }
+      
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: translate(0,0);
+        }
+        25%,
+        75% {
+          transform: translate(10px,0);
+        }
+        50% {
+          transform: translate(-10px,0);
+        }
+      }
+      
+      
     
     .carrusel-destacado{    
         position: relative;    
@@ -603,6 +635,8 @@ body{
         background: var(--primarioS2);
         color: var(--blanco75op);
         padding: 7px 15px 7px 30px;
-     } 
+    }
+    
+    
 
 }
