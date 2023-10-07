@@ -27,6 +27,7 @@
     --banner:#282DE3;
     --negro20op: rgba(14,7,29,0.2);
     --negro55op: rgba(14,7,29,0.55);
+    --negro85op: rgba(14,7,29,0.85);
     --blanco75op: rgba(255,255,255,0.75);
 }
 
@@ -64,7 +65,6 @@ body{
         display: block;
         flex-wrap: wrap;
     }
-
 
     .encabezado {
         width: 100%;
@@ -653,36 +653,47 @@ body{
         padding: 7px 15px 7px 30px;
     }
     
-    
+    .contenedor-cargador {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--negro85op);
+        backdrop-filter: blur(5px);
+        z-index: 999;
+    }
 
+        /* Estilos para el contenedor del simulador de carga */
+    .cargador {
+        width: 180px;
+        height: 40px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 50px;
+        z-index: 200;
+    }
 
+    /* Estilos para la barra de progreso */
+    .barra {
+        width: 0;
+        height: 40px;
+        border-radius: 10px;
+        margin: 50px 0;
+        background-color: var(--secundarioL1);
+        transition: width 0.1s linear;
+        box-shadow: 0px 0px 10px 5px var(--secundarioL1);
+    }
 
+    /* Estilos para el porcentaje de avance */
+    .texto-cargador, .porcentaje {
+        margin-top: 10px;
+        color: var(--secundarioL2);
+    }
 
-
-     /* Estilos para el contenedor del simulador de carga */
-.cargador {
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 24px;
-    margin-top: 50px;
-}
-
-/* Estilos para la barra de progreso */
-.barra {
-    width: 0;
-    height: 40px;
-    border-radius: 10px;
-    background-color: var(--secundarioL1);
-    transition: width 0.1s linear;
-    box-shadow: 0px 0px 10px 5px var(--secundarioL1);
-}
-
-/* Estilos para el porcentaje de avance */
-.porcentaje {
-    margin-top: 10px;
-    color: var(--secundarioL2);
-}
-
+    .no-mostrar {
+        display: none;
+    }
 
 }
