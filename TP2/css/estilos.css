@@ -282,7 +282,7 @@ body{
 
     .carrusel-slider::-webkit-scrollbar {
         display: none;
-      }
+    }
       
     .titulo-carrusel-card{
         margin-top: 50px;
@@ -349,7 +349,18 @@ body{
         background-color:var(--primarioS2);
         border-radius: 20px;
         scroll-snap-align: center;
+        transition: ls;
+        transition: 1s linear;
+        
     }
+
+    .card:hover {
+        
+        transform: matrix(1, -0.3, 0, 1, 0, 0) ;
+        
+      }
+        
+    
     
     .imagen-card {
         width: 235px;
@@ -377,8 +388,7 @@ body{
         height: 80px;
     }
 
-    .boton-card {
-        
+    .boton-card {        
     }
 
     main > .titulo-principal{
