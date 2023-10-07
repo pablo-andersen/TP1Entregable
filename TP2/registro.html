@@ -14,96 +14,96 @@
         <header class="encabezado">
             <section class="nav-fila-superior">
                 <div class="nav-logo">
-                    <a href="#"><img src="img/logo.png" alt="A Jugar! tu sitio para viciar"></a>
+                    <a href="index.html"><img src="img/logo.png" alt="A Jugar! tu sitio para viciar"></a>
                 </div>
-                <nav class="contenedor-nav">                
+                <div class="contenedor-nav">                
                     <div class="nav-busqueda">                        
                         <input class="input-busqueda" type="text" placeholder="¿A qué jugamos hoy?">
-                          <button><img src="img/Lupa.png" alt=""></button>  
+                        <button><img src="img/Lupa.png" alt=""></button>  
                     </div>
                     <div class="nav-menu">
                         <section>
                             <a href="#"><img src="img/Carrito vacio.png" alt=""></img></a>
                             <a href="#"><img src="img/AvatarLogin.png" alt=""></img></a>
-                            <a href="#"><img src="img/hamburguesa.png" alt=""></img></a>
-                        </section>                    
+                            <a href="#"><img src="img/hamburguesa.png" alt="" id="menu-toggle"></img></a>
+                        </section>
                     </div>
-                </nav>
+                </div>
             </section>
                 <div class="nav-breadcrumbs">
-                    <p>Inicio</p>
+                    <p><a href="index.html">Inicio</a></p>
                 </div>
         </header>
-            <main>
-                <div class="menu-general">
-                    <ul class="nav">
-                      <li><a href="">Inicio</a></li>
-                      <li><a href="">Recientes</a></li>
-                      <li><a href="">Nuevos</a></li>
-                      <li><a href="">Tendencias</a></li>
-                      <li><a href="">Actualizados</a></li>
-                      <li><a href="">Clasicos</a></li>
-                      <li><a href="">De acción</a></li>
-                      <li><a href="">Aventuras</a></li>
-                      <li><a href="">De animales</a></li>
-                      <li><a href="">De deportes</a></li>
-                      <li><a href="">Educativos</a></li>
-                      <li><a href="">Lógica</a></li>
-                      <li><a href="">Puzzles</a></li>
-                      <li><a href="">RPG</a></li>
-                      <li><a href="">Carreras</a></li>
-                      <li><a href="">Estrategia</a></li>
-                      <li><a href="">Juegos de mesa</a></li>
-                    </ul>
-                  </div>
-                <h1 class="titulo-principal">¡REGÍSTRATE Y DIVIÉRTETE!</h1>
-                <section class="formulario-registro">
-                    <form class="formulario-registro-contenedor">
+        <nav class="no-mostrar" id="lista-menu">
+            <ul class="lista-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Recientes</a></li>
+                <li><a href="">Nuevos</a></li>
+                <li><a href="">Tendencias</a></li>
+                <li><a href="">Actualizados</a></li>
+                <li><a href="">Clasicos</a></li>
+                <li><a href="">De acción</a></li>
+                <li><a href="">Aventuras</a></li>
+                <li><a href="">De animales</a></li>
+                <li><a href="">De deportes</a></li>
+                <li><a href="">Educativos</a></li>
+                <li><a href="">Lógica</a></li>
+                <li><a href="">Puzzles</a></li>
+                <li><a href="">RPG</a></li>
+                <li><a href="">Carreras</a></li>
+                <li><a href="">Estrategia</a></li>
+                <li><a href="">Juegos de mesa</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1 class="titulo-principal">¡REGÍSTRATE Y DIVIÉRTETE!</h1>
+            <section class="formulario-registro">
+                <form class="formulario-registro-contenedor">
 
-                        <div class="formulario-registro-completar">
+                    <div class="formulario-registro-completar">
 
-                            <label for=»nombre»> Nombre y Apellido: <span class="requerido">*</span></label>
-                            
-                            <input type=»text» id=»nombre» required/>
-
-                            <label for=»edad»> Edad: <span class="requerido">*</span></label>
-                            
-                            <input type=»text» id=»edad» required/>
-
-                            <label for=»correo»> Correo Electronico: <span class="requerido">*</span></label>
-                            
-                            <input type=»text» id=»correo» required/>
+                        <label for=»nombre»> Nombre y Apellido: <span class="requerido">*</span></label>
                         
-                            <label for=»user»> Nombre Usuario: </label>
-                            
-                            <input type=»text» id=»user» >
-                                            
-                            <label for=»contrasenia»> Contraseña: <span class="requerido">*</span></label>
-                            
-                            <input type=»password» id=»contrasenia» required/>
-                            
-                            <p>Debe contener al menos 8 caracteres</p>
+                        <input type=»text» id=»nombre» required/>
 
-                            <label for=»repetir-contrasenia»> Repetir Contraseña: <span class="requerido">*</span></label>
-                            
-                            <input type=»password» id=»repetir-contrasenia» required/>
-                            <img src="img/captcha.png" alt="captcha" class="captcha">
+                        <label for=»edad»> Edad: <span class="requerido">*</span></label>
+                        
+                        <input type=»text» id=»edad» required/>
 
-                            <div class="botones-redes">
-                                <p>Tengo cuenta <span class="link">Iniciar Sesion</span> </p>
-                                <img src="img/IniciarFacebook.png" alt="iniciar sesion con Facebook">
-                                <img src="img/IniciarApple.png" alt="iniciar sesion con Appel">
-                                <img src="img/SeguirConGoogle.png" alt="iniciar sesion con Google">
-                            </div>
-                            
-                            <button class="boton" type=»submit» id="registrar"> Registrar</button> 
+                        <label for=»correo»> Correo Electronico: <span class="requerido">*</span></label>
+                        
+                        <input type=»text» id=»correo» required/>
+                    
+                        <label for=»user»> Nombre Usuario: </label>
+                        
+                        <input type=»text» id=»user» >
+                                        
+                        <label for=»contrasenia»> Contraseña: <span class="requerido">*</span></label>
+                        
+                        <input type=»password» id=»contrasenia» required/>
+                        
+                        <p>Debe contener al menos 8 caracteres</p>
 
-                            <p>Ir al correo ingresado para verificar la cuenta</p>
+                        <label for=»repetir-contrasenia»> Repetir Contraseña: <span class="requerido">*</span></label>
+                        
+                        <input type=»password» id=»repetir-contrasenia» required/>
+                        <img src="img/captcha.png" alt="captcha" class="captcha">
+
+                        <div class="botones-redes">
+                            <p>Tengo cuenta <span class="link">Iniciar Sesion</span> </p>
+                            <img src="img/IniciarFacebook.png" alt="iniciar sesion con Facebook">
+                            <img src="img/IniciarApple.png" alt="iniciar sesion con Appel">
+                            <img src="img/SeguirConGoogle.png" alt="iniciar sesion con Google">
                         </div>
                         
-                    </form>
-                </section>
-            </main>
+                        <button class="boton" type=»submit» id="registrar"> Registrar</button> 
+
+                        <p>Ir al correo ingresado para verificar la cuenta</p>
+                    </div>
+                    
+                </form>
+        </section>
+        </main>
         <footer class="grid-footer">
             <div class="columna-footer">
                 <h3>Categorias</h3>
@@ -149,5 +149,6 @@
             </div>
             <div class="grid-fila-footer">Fila Copyright</div>
         </footer>
+        <script src="scripts/script.js"></script>
 </body>
 </html>

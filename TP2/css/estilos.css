@@ -73,6 +73,13 @@ body{
         flex-wrap: wrap;
     }
 
+    nav {
+        float: right;
+        position: relative;
+        top: -30px;
+
+    }
+
     .nav-fila-superior {
         height: 100px;
         background-color: var(--primarioS1);
@@ -339,6 +346,22 @@ body{
         box-shadow: 3px 3px 4px var(--blanco75op);
     }
 
+    .boton-card button{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(90deg, var(--primario) 62%, var(--acento) 38%);
+        border: none;
+        color: var(--blanco);
+        width: 170px;
+        height: 40px;
+        padding: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 26px;
+        box-shadow: 3px 3px 4px var(--blanco75op);
+    }
+
     
 
     .card {
@@ -350,17 +373,13 @@ body{
         border-radius: 20px;
         scroll-snap-align: center;
         transition: ls;
-        transition: 1s linear;
+        transition: 0.1s linear;
         
     }
 
-    .card:hover {
-        
-        transform: matrix(1, -0.3, 0, 1, 0, 0) ;
-        
-      }
-        
-    
+    .card:hover {        
+        transform: matrix(1, -0.3, 0, 1, 0, 0) ;        
+      }     
     
     .imagen-card {
         width: 235px;
@@ -374,21 +393,20 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
         padding: 10px;
     }
 
     .titulo-card {
         display: inline;
         font-size: 1.5em;
+        align-self: flex-start;
     }
 
     .descripcion-card {
         overflow: hidden;
         text-overflow: ellipsis;
         height: 80px;
-    }
-
-    .boton-card {        
     }
 
     main > .titulo-principal{
@@ -398,7 +416,6 @@ body{
         font-size: 40px;
     
     }
-
 
     .formulario-ingreso{
         display: flex;
@@ -611,26 +628,27 @@ body{
         padding: 10px;
         color: var(--blanco);
     }
-
-    .menu-general {
-        position: relative;
-        float: right;
-     } 
-     
-     ul.nav {
-        list-style: none;
+     .boton-menu-toggle { /*    Verificar si hay que aplicar algun estilo según como quede*/
         display: block;
-        width: 300px;
-        position: relative;
+     }
+
+     ul.lista-menu {
+        position: absolute;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: auto;
         top: 0px;
-        left: 100px;
+        right: 20px;
         padding: 0px 0px 0px 10px;
         -webkit-background-size: 50% 100%;
         -moz-background-size: 50% 100%;
         -o-background-size: 50% 100%;
+        z-index: 9999;
      } 
      
-     ul.nav li a {
+     ul.lista-menu li a {
         width: 150px;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -651,13 +669,14 @@ body{
         -moz-border-bottom-left-radius: 10px;
         -o-border-bottom-left-radius: 10px;
         display: block;
+        gap: 95px;
         text-decoration: none;
         -webkit-box-shadow: 5px 5px 5px var(--secundarioL1);
         -moz-box-shadow: 5px 5px 5px var(--secundarioL1);
         -o-box-shadow: 5px 5px 5px var(--secundarioL1);
      } 
      
-     ul.nav li a:hover {
+     ul.lista-menu li a:hover {
         background: var(--primarioS2);
         color: var(--blanco75op);
         padding: 7px 15px 7px 30px;

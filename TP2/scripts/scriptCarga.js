@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+    //barra de porcentaje de carga que se presenta al inicio
     const contenedor = document.querySelector(".contenedor-cargador");
     const barra = document.querySelector(".barra");
     const porcentaje = document.querySelector(".porcentaje");
