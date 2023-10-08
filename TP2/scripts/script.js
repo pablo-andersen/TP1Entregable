@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // icono.Style.animation = null;
             setTimeout(() => {
                 window.location.href = "indexLog.html";
-            }, 500);
+            }, 200);
             
            
 
