@@ -455,8 +455,8 @@ body{
         overflow: hidden; 
         justify-content: center; 
         align-items: center; 
-        gap: 10px; 
-        display: inline-flex;
+        display: flex;
+        cursor: pointer;
         text-align: center; 
         color: var(--primarioL1); 
         font-size: 32px; 
