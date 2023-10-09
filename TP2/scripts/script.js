@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
+    const btnCarrito = document.querySelector("#btn-carrito");
+    const carrito = document.querySelector("#carrito");
+
+    btnCarrito.addEventListener("click", () => {
+        carrito.classList.toggle("no-mostrar");
+    })
+
     //validar si están los campos del formulario completos. Si no están completos, 
     //tirar mensaje de error.
     //Si están completos, animar y luego redirigir a indexLog.
@@ -49,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // icono.Style.animation = null;
             setTimeout(() => {
                 window.location.href = "indexLog.html";
-            }, 500);
+            }, 200);
             
            
 

@@ -29,6 +29,7 @@
     --negro55op: rgba(14,7,29,0.55);
     --negro85op: rgba(14,7,29,0.85);
     --blanco75op: rgba(255,255,255,0.75);
+    --secundario90op: rgba(120, 68, 220, .9);
 }
 
 *{
@@ -50,6 +51,7 @@ body{
 
 .contenedor {
     background-color: var(--negro);
+    position: relative;
 }
 
 @media only screen and (min-width: 600px) {
@@ -58,6 +60,63 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .carrito-compras {
+        width: 310px;
+        height: 310px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 20px;
+        background-color: var(--secundario);
+        box-shadow: 6px 6px 3px 0 var(--blanco75op);
+        position: absolute;
+        right: 20px;
+        top: 100px;
+        z-index: 99999;
+    }
+
+    .fila-carrito {
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--blanco);
+    }
+    
+    .items-carrito {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+
+    .linea-total {
+        align-self: center;
+        width: 85%;
+        border-bottom: 2px solid;
+    }
+
+    span.total {
+        margin-left: 20px;
+    }
+
+    .fila-carrito img {
+        width: 70px;
+    }
+
+    .fila-carrito button {
+        width: auto;
+        height: 50px;
+        border-radius: 30px;
+        border: none;
+        padding: 15px;
+        background-color: var(--acento);
+        box-shadow: 4px 4px 5px 0 var(--blanco);
+        color: var(--blanco);
+        font-size: 16px;
     }
 
     .contenedor {
@@ -284,6 +343,7 @@ body{
     .carrusel-slider{
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
+        padding: 30px;
     }
     
 
@@ -293,7 +353,6 @@ body{
       
     .titulo-carrusel-card{
         margin-top: 50px;
-        margin-bottom: 15px;
         padding-left: 20px;
     }
 
@@ -353,15 +412,22 @@ body{
         background: linear-gradient(90deg, var(--primario) 62%, var(--acento) 38%);
         border: none;
         color: var(--blanco);
-        width: 170px;
+        width: auto;
         height: 40px;
-        padding: 10px;
+        
         border-radius: 30px;
         cursor: pointer;
-        font-size: 26px;
+        font-size: 24px;
+        font-weight: lighter;
         box-shadow: 3px 3px 4px var(--blanco75op);
     }
 
+    .boton-card button>span {
+        padding: 0 10px;
+    }
+    .boton-card img{
+        padding: 0 10px;
+    }
     
 
     .card {
@@ -724,6 +790,7 @@ body{
     .no-mostrar {
         display: none;
     }
+<<<<<<< HEAD
     form {
         width: 250px;
         margin: 0 auto;
@@ -797,6 +864,11 @@ body{
         align-items: center;
         border-radius: 30px;
         background-color: var(--secundario);
+=======
+    .login-exitoso {
+        
+    }
+>>>>>>> 5049e6353e6066646fff00adc2f98d50456ed03c
 
     }
 
