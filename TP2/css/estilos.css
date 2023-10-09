@@ -657,6 +657,15 @@ body{
         padding-left: 80px;
     }
 
+  
+    }
+    .redes li {
+       
+        list-style: none;
+        display: inline;
+    }
+    
+    
     .contenido relacionado p {
         text-align: right;
     }
