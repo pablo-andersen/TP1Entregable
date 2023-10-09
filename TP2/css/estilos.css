@@ -790,7 +790,6 @@ body{
     .no-mostrar {
         display: none;
     }
-<<<<<<< HEAD
     form {
         width: 250px;
         margin: 0 auto;
@@ -864,13 +863,9 @@ body{
         align-items: center;
         border-radius: 30px;
         background-color: var(--secundario);
-=======
+    }
+
     .login-exitoso {
         
     }
->>>>>>> 5049e6353e6066646fff00adc2f98d50456ed03c
-
-    }
-
-    
 }
