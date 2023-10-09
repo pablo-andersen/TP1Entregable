@@ -656,11 +656,25 @@ body{
         margin-top: 50px;
         padding-left: 80px;
     }
+
+    .contenido relacionado p {
+        text-align: right;
+    }
+
+    .article.comentario p {
+        text-align: left;
+    }
+
     .lista-contenido-relacionado li{
+        padding: 5px;
         list-style: none;
         display: inline;
     }
 
+    .lista-contenido-relacionado p{
+        text-align: left;
+        padding: 15px;
+    }
     .contenedor-comunidad {
         display: flex;
         flex-direction: row;
@@ -792,12 +806,11 @@ body{
     }
     form {
         width: 250px;
-        margin: 0 auto;
-        height: 50px;
+        margin: 0;
       }
       
     form p {
-        text-align: center;
+        text-align: right;
       }
       
     input[type="radio"] {
@@ -805,8 +818,8 @@ body{
       }
 
       label {
-        font-size: 20px;
-        color: grey;
+        font-size: 30px;
+        color: var(--primarioS3);
       }
       
       .clasificacion {
@@ -816,22 +829,26 @@ body{
       
       label:hover,
       label:hover ~ label {
-        color: orange;
+        color: var(--secundario);
       }
       
       input[type="radio"]:checked ~ label {
-        color: orange;
+        color: var(--secundario);
       }
 
-   
+      .contenido-relacionado {
+        display: flex;
+        justify-content: space-between;
+      }
 
     article.comentario{
         width: 63%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: flex-start;
-        padding: 10px;
+        padding-left: 10px;
+        padding-bottom: 35px;
     }
 
     .comentario-fila-superior{
@@ -839,8 +856,15 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0;
     }
   
+    .comentario-fila-inferior{
+        width: 97%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .comentario-fila-inferior textarea{
         background-color: var(--primarioS3);
@@ -850,20 +874,16 @@ body{
         border: 2px solid var(--secundario)
     }
 
-    .comentario-fila-inferior{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     .boton-comentario{
         padding: 10px 20px;
+        margin-left: 5px;
         justify-content: center;
         align-items: center;
         border-radius: 30px;
         background-color: var(--secundario);
-    
+    }
+
+    .login-exitoso {
         
     }
     .login-exitoso {

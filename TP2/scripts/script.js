@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // Abrir cerrar menu al clickear boton de menu hamburguesa
-    const menuToggle = document.getElementById("menu-toggle");
-    const listaMenu = document.getElementById("lista-menu");
+    const menuToggle = document.querySelector("#menu-toggle");
+    const listaMenu = document.querySelector("#lista-menu");
 
     menuToggle.addEventListener("click", function () {
         listaMenu.classList.toggle("no-mostrar");
