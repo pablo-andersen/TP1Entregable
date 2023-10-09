@@ -724,5 +724,81 @@ body{
     .no-mostrar {
         display: none;
     }
+    form {
+        width: 250px;
+        margin: 0 auto;
+        height: 50px;
+      }
+      
+    form p {
+        text-align: center;
+      }
+      
+    input[type="radio"] {
+        display: none;
+      }
 
+      label {
+        font-size: 20px;
+        color: grey;
+      }
+      
+      .clasificacion {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+      }
+      
+      label:hover,
+      label:hover ~ label {
+        color: orange;
+      }
+      
+      input[type="radio"]:checked ~ label {
+        color: orange;
+      }
+
+   
+
+    article.comentario{
+        width: 63%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .comentario-fila-superior{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+
+    .comentario-fila-inferior textarea{
+        background-color: var(--primarioS3);
+        border-radius: 20px;
+        padding: 10px;
+        color-scheme: var(--blanco);
+        border: 2px solid var(--secundario)
+    }
+
+    .comentario-fila-inferior{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton-comentario{
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        background-color: var(--secundario);
+
+    }
+
+    
 }
