@@ -199,6 +199,7 @@ body{
         color: var(--blanco75op);
         
     }
+
     .grid-footer {
         margin-top: 80px;
         display: grid;
@@ -232,6 +233,7 @@ body{
         background: none;
         border: none;
     }
+
     .nav-busqueda button:hover {
         animation-name: wiggle;
         animation-duration: 0.4s;
@@ -243,21 +245,19 @@ body{
         animation-play-state: running;
       }
       
-      @keyframes wiggle {
+    @keyframes wiggle {
         0%,
         100% {
-          transform: translate(0,0);
+            transform: translate(0,0);
         }
         25%,
         75% {
-          transform: translate(10px,0);
+            transform: translate(10px,0);
         }
         50% {
-          transform: translate(-10px,0);
+            transform: translate(-10px,0);
         }
-      }
-      
-      
+    }
     
     .carrusel-destacado{    
         position: relative;    
@@ -286,7 +286,8 @@ body{
     a{
         text-decoration: none;
         color: var(--blanco);
-    }   
+    }
+
     .selector-anterior {
         position: absolute;
         top:190px;
@@ -303,8 +304,7 @@ body{
         align-items: center;
         padding-left: 10px;
         padding-bottom: 9px;
-        box-shadow: 0px 0px 10px 0px var(--blanco);
-        
+        box-shadow: 0px 0px 10px 0px var(--blanco);        
     }
 
     .selector-posterior {
@@ -344,8 +344,7 @@ body{
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         padding: 30px;
-    }
-    
+    }    
 
     .carrusel-slider::-webkit-scrollbar {
         display: none;
@@ -413,8 +412,7 @@ body{
         border: none;
         color: var(--blanco);
         width: auto;
-        height: 40px;
-        
+        height: 40px;        
         border-radius: 30px;
         cursor: pointer;
         font-size: 24px;
@@ -425,10 +423,10 @@ body{
     .boton-card button>span {
         padding: 0 10px;
     }
+
     .boton-card img{
         padding: 0 10px;
     }
-    
 
     .card {
         display: flex;
@@ -439,13 +437,12 @@ body{
         border-radius: 20px;
         scroll-snap-align: center;
         transition: ls;
-        transition: 0.1s linear;
-        
+        transition: 0.1s linear;        
     }
 
     .card:hover {        
         transform: matrix(1, -0.3, 0, 1, 0, 0) ;        
-      }     
+    }     
     
     .imagen-card {
         width: 235px;
@@ -479,13 +476,13 @@ body{
         width: 100%;
         text-align: center;
         margin: 50px 0px;
-        font-size: 40px;
-    
+        font-size: 40px;    
     }
 
     .formulario-ingreso{
         display: flex;
     }
+
     .formulario-ingreso-contenedor{
         width: 100%; 
         height: 100%;
@@ -504,9 +501,8 @@ body{
         display: inline-flex;
         opacity: 0.85; background: var(--secundarioL1); 
         box-shadow: 6px 6px 3px var(--blanco75op); border-radius: 20px;
-        
-     
     }
+
     .boton {
         width: 250px; 
         height: 75px; 
@@ -542,7 +538,7 @@ body{
         padding-left: 95px;
         margin-bottom: 2px;
         color: var(--blanco);
-     } 
+    } 
 
     .formulario input{
         width: 250px;
@@ -605,19 +601,17 @@ body{
         color: var(--alerta);
     }
 
+    /*Clase para los botones de inicio de sesión con redes sociales*/ 
     .botones-redes .link {
         font-size: 1.5em;
-        padding-left: 5px;
-       
+        padding-left: 5px;       
     }
 
-    .captcha{
-        width: 200px;
-        height: 50px;
-        margin-top: 20px;
-        
+    .botones-redes img {
+        width: 199px;
+        height: 26px;
+        border-radius: 20px;
     }
-    
 
     .botones-redes{
         display: flex;
@@ -626,13 +620,25 @@ body{
         gap: 20px;
         margin-top: 61px;
     }
-
-    .botones-redes img {
-        width: 199px;
-        height: 26px;
-        border-radius: 20px;
-
+    
+    /*Iconos de redes sociales en ventana juego*/
+    .redes {
+        width: 70%;
+        text-align: right;
+        margin-bottom: 25px;
     }
+
+    .redes li {       
+        list-style: none;
+        display: inline;
+    }
+
+    .captcha{
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+        
+    }    
 
     .contenedor-juego {
         display: flex;
@@ -657,15 +663,6 @@ body{
         padding-left: 80px;
     }
 
-  
-    }
-    .redes li {
-       
-        list-style: none;
-        display: inline;
-    }
-    
-    
     .contenido relacionado p {
         text-align: right;
     }
@@ -684,14 +681,17 @@ body{
         text-align: left;
         padding: 15px;
     }
+
     .contenedor-comunidad {
         display: flex;
         flex-direction: row;
         width: 100%;
     }
+
     .contenedor-comunidad > .comunidad {
         width: 70%;
     }
+
     .contenedor-comunidad > .juegos-promocionados {
         width: 30%;
     }
@@ -705,6 +705,7 @@ body{
         width: 100px;
         height: 100px;
     }
+
     .posteo-fila-superior {
         display: flex;
         flex-direction: row;
@@ -717,11 +718,12 @@ body{
         padding: 10px;
         color: var(--blanco);
     }
-     .boton-menu-toggle { /*    Verificar si hay que aplicar algun estilo según como quede*/
-        display: block;
-     }
 
-     ul.lista-menu {
+    .boton-menu-toggle { /*    Verificar si hay que aplicar algun estilo según como quede*/
+        display: block;
+    }
+
+    ul.lista-menu {
         position: absolute;
         list-style: none;
         display: flex;
@@ -735,9 +737,9 @@ body{
         -moz-background-size: 50% 100%;
         -o-background-size: 50% 100%;
         z-index: 9999;
-     } 
+    } 
      
-     ul.lista-menu li a {
+    ul.lista-menu li a {
         width: 150px;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -763,9 +765,9 @@ body{
         -webkit-box-shadow: 5px 5px 5px var(--secundarioL1);
         -moz-box-shadow: 5px 5px 5px var(--secundarioL1);
         -o-box-shadow: 5px 5px 5px var(--secundarioL1);
-     } 
+    } 
      
-     ul.lista-menu li a:hover {
+    ul.lista-menu li a:hover {
         background: var(--primarioS2);
         color: var(--blanco75op);
         padding: 7px 15px 7px 30px;
@@ -813,42 +815,43 @@ body{
     .no-mostrar {
         display: none;
     }
+
     form {
         width: 250px;
         margin: 0;
-      }
+    }
       
     form p {
         text-align: right;
-      }
+    }
       
     input[type="radio"] {
         display: none;
-      }
+    }
 
-      label {
+    label {
         font-size: 30px;
         color: var(--primarioS3);
-      }
+    }
       
-      .clasificacion {
+    .clasificacion {
         direction: rtl;
         unicode-bidi: bidi-override;
-      }
+    }
       
-      label:hover,
-      label:hover ~ label {
+    label:hover,
+    label:hover ~ label {
         color: var(--secundario);
-      }
+    }
       
-      input[type="radio"]:checked ~ label {
+    input[type="radio"]:checked ~ label {
         color: var(--secundario);
-      }
+    }
 
-      .contenido-relacionado {
+    .contenido-relacionado {
         display: flex;
         justify-content: space-between;
-      }
+    }
 
     article.comentario{
         width: 63%;
@@ -895,8 +898,5 @@ body{
     .login-exitoso {
         
     }
-    .login-exitoso {
-    }
-
     
 }
