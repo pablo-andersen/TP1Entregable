@@ -880,7 +880,7 @@ body{
         background-color: var(--secundario);
     }
 
-<<<<<<< HEAD
+
     .aside-card {
     transform: scale(0.7);
     transition: transform 0.2s ease;
@@ -888,7 +888,8 @@ body{
 
     .aside-card:hover{
         transition: transform 0.2s ease;
-=======
+    }
+
     .boton {
         position: relative;
         overflow: hidden; 
