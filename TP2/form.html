@@ -58,11 +58,11 @@
         <main class="formulario-ingreso">
             <form class="formulario-ingreso-contenedor">
                 <div class="formulario">                
-                    <label for="user"> Nombre Usuario: <span class="requerido">*</span></label>
+                    <label for="usuario"> Nombre Usuario: <span class="requerido">*</span></label>
                     
                     <input type="text" id="usuario" required/>
                                     
-                    <label for="password"> Contraseña: <span class="requerido">*</span></label>
+                    <label for="contrasenia"> Contraseña: <span class="requerido">*</span></label>
                     
                     <input type="password" id="contrasenia" required/>
                     <p>Debe contener al menos 8 caracteres</p>
@@ -72,7 +72,14 @@
                         <img src="img/IniciarApple.png" alt="Iniciar sesion con Appel">
                         <img src="img/SeguirConGoogle.png" alt="Iniciar sesion con Google">
                     </div>                    
-                    <button class="boton" type="submit" id="btn-login"><span id="ingreso-exitoso" class="no-mostrar icono-animado">&#128077;</span>Ingresar</button>
+                    <button type="submit" class="boton" id="btn-login" >
+                        <div class="no-mostrar fondo-animado" id="banner-exitoso">
+                            <div class="texto-en-fondo">
+                                &#128077; OK
+                            </div>
+                        </div>
+                        Ingresar
+                    </button>
                 </div>                
             </form>
         </main>

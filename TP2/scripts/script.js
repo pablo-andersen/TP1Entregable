@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         listaMenu.classList.toggle("no-mostrar");
     });
 
-
     // Cerrar menu cuando clickeas en una opcion del menu desplegado
     const itemMenu = document.querySelectorAll(".lista-menu li");
     itemMenu.forEach((e) => {
@@ -22,45 +21,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
     btnCarrito.addEventListener("click", () => {
         carrito.classList.toggle("no-mostrar");
-    })
+    });
 
     //validar si están los campos del formulario completos. Si no están completos, 
     //tirar mensaje de error.
     //Si están completos, animar y luego redirigir a indexLog.
 
     const btnLogin = document.querySelector("#btn-login");
-    const icono = btnLogin.querySelector("icono-animado");
+    const btnRegistro = document.querySelector("#btn-registro");
+    const banner = document.querySelector("#banner-exitoso");
 
-    btnLogin.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const campoUsuario = document.querySelector("#usuario").value;
-        const campoContrasenia = document.querySelector("#contrasenia").value;
-
-        console.info("campoContrasenia --> ", campoContrasenia);
-        console.info("campoUsuario --> ", campoUsuario);
-        
-        if (campoUsuario && campoContrasenia) {
-            
-            
+    if(btnLogin) {
+        btnLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+    
+            const campoUsuario = document.querySelector("#usuario").value;
+            const campoContrasenia = document.querySelector("#contrasenia").value;
+    
+            console.info("campoContrasenia --> ", campoContrasenia);
+            console.info("campoUsuario --> ", campoUsuario);
             //solo si se completaron los campos entra al if
+            if (campoUsuario && campoContrasenia) {
+                
+                banner.classList.remove("no-mostrar");                    
+                //primero muestro animacion y luego redirijo al usuario
+                setTimeout(() => {
+                    window.location.href = "indexLog.html";
+                }, 2500);
+            }
+        });
+    }
 
-            //primero muestro animacion y luego redirijo al usuario
-            //para mostrar animacion, se crea una clase css y se aplica al 
-            //elemento únicamente cuando entró a este if. 
-            //la animación dura 2 segundos, pero la redirección se hace 
-            //a los 4 segundos. Usamos setTimeout().
-            // btnLogin.classList.add("fondo-animado");
-            // icono.Style.animation = "none";
-            // void icono.offsetWidth;
-            // icono.Style.animation = null;
-            setTimeout(() => {
-                window.location.href = "indexLog.html";
-            }, 200);
-            
+    if(btnRegistro) {
+        btnRegistro.addEventListener("click", (e) => {
+            e.preventDefault();
+    
+            const nombre = document.querySelector("#nombre").value;
+            const edad = document.querySelector("#edad").value;
+            const email = document.querySelector("#correo").value;
+            const pass = document.querySelector("#contrasenia").value;
+            const repetirPass = document.querySelector("#repetir-contrasenia").value;
+    
            
-
-        }
-    });
+            //solo si se completaron los campos entra al if
+            if (nombre && edad && email && pass && repetirPass && (pass == repetirPass)) {
+                
+                banner.classList.remove("no-mostrar");                    
+                //primero muestro animacion y luego redirijo al usuario
+                setTimeout(() => {
+                    window.location.href = "indexLog.html";
+                }, 2500);
+            }
+        });
+    }
     
 });
