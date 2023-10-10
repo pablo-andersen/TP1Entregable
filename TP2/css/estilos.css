@@ -708,7 +708,7 @@ body{
         display: block;
     }
 
-    ul.lista-menu {
+    ul.lista-menu, ul.lista-avatar {
         position: absolute;
         list-style: none;
         display: flex;
@@ -724,7 +724,7 @@ body{
         z-index: 9999;
     } 
      
-    ul.lista-menu li a {
+    ul.lista-menu li a, ul.lista-avatar li a {
         width: 150px;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -752,7 +752,7 @@ body{
         -o-box-shadow: 5px 5px 5px var(--secundarioL1);
     } 
      
-    ul.lista-menu li a:hover {
+    ul.lista-menu li a:hover, ul.lista-avatar li a:hover {
         background: var(--primarioS2);
         color: var(--blanco75op);
         padding: 7px 15px 7px 30px;

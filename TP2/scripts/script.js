@@ -23,6 +23,24 @@ document.addEventListener("DOMContentLoaded", function() {
         carrito.classList.toggle("no-mostrar");
     });
 
+    //logica de menu avatar/usuario
+
+    const btnAvatar = document.querySelector("#btn-avatar");
+    const menuAvatar = document.querySelector("#nav-avatar");
+
+    if (btnAvatar && menuAvatar) {
+        btnAvatar.addEventListener("click", () => {
+            menuAvatar.classList.toggle("no-mostrar");
+        });
+    }
+
+    const itemAvatar = document.querySelectorAll(".lista-avatar li");
+    itemAvatar.forEach((e) => {
+        e.addEventListener("click", () => {
+            menuAvatar.classList.toggle("no-mostrar");
+        })
+    })
+
     //validar si están los campos del formulario completos. Si no están completos, 
     //tirar mensaje de error.
     //Si están completos, animar y luego redirigir a indexLog.
