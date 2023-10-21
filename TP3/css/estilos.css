@@ -796,8 +796,11 @@ footer.grid-footer {
         width: 100%;
     }
 
-    .ventana-juego img {
-        width: 75%;
+    .ventana-juego canvas {
+        width: 960px;
+        height: 580px;
+        background-color: #FFF;
+        background-image: '../img/JuegoBarbieVsKen.png';
     }
     
     .contenedor-juego>h1 {
