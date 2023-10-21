@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <title>A Jugar! tu sitio para viciar</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="encabezado">
+            <section class="nav-fila-superior">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="img/Logo.png" alt="A Jugar! tu sitio para viciar"></a>
+                </div>
+                <div class="contenedor-nav">                
+                    <div class="nav-busqueda">                        
+                        <input class="input-busqueda" type="text" placeholder="¿A qué jugamos hoy?">
+                        <button><img src="img/Lupa.png" alt=""></button>  
+                    </div>
+                    <div class="nav-menu">
+                        <section>
+                            <a href="#"><img src="img/Carrito vacio.png" alt="" id="btn-carrito"></img></a>
+                            <a href="#"><img src="img/AvatarLogin.png" alt=""></img></a>
+                            <a href="#"><img src="img/hamburguesa.png" alt="" id="menu-toggle"></img></a>
+                        </section>
+                    </div>
+                </div>
+            </section>
+                <div class="nav-breadcrumbs">
+                    <p><a href="index.html">Inicio</a></p>
+                </div>
+        </header>
+        <nav class="no-mostrar" id="lista-menu">
+            <ul class="lista-menu">
+                <li><a href="form.html">Iniciar Sesión</a></li>
+                <li><a href="index.html">Recientes</a></li>
+                <li><a href="index.html">Nuevos</a></li>
+                <li><a href="index.html">Tendencias</a></li>
+                <li><a href="index.html">Actualizados</a></li>
+                <li><a href="index.html">Clasicos</a></li>
+                <li><a href="index.html">De acción</a></li>
+                <li><a href="Index.html">Aventuras</a></li>
+                <li><a href="index.html">De animales</a></li>
+                <li><a href="index.html">De deportes</a></li>
+                <li><a href="index.html">Educativos</a></li>
+                <li><a href="index.html">Lógica</a></li>
+                <li><a href="index.html">Puzzles</a></li>
+                <li><a href="index.html">RPG</a></li>
+                <li><a href="index.html">Carreras</a></li>
+                <li><a href="index.html">Estrategia</a></li>
+                <li><a href="index.html">Juegos de mesa</a></li>
+            </ul>
+        </nav>
+        <main>           
+            <h1 class="titulo-principal">¡REGÍSTRATE Y DIVIÉRTETE!</h1>
+            <section class="formulario-registro">
+                <form class="formulario-registro-contenedor">
+                    <div class="formulario-registro-completar">
+                        <label for="nombre"> Nombre y Apellido: <span class="requerido">*</span></label>                        
+                        <input type="text" id="nombre" required/>
+                        <label for="edad"> Edad: <span class="requerido">*</span></label>                        
+                        <input type="text" id="edad" required/>
+                        <label for="correo"> Correo Electronico: <span class="requerido">*</span></label>                        
+                        <input type="text" id="correo" required/>                    
+                        <label for="user"> Nombre Usuario: </label>                        
+                        <input type="text" id="user" >                                        
+                        <label for="contrasenia"> Contraseña: <span class="requerido">*</span></label>                        
+                        <input type="password" id="contrasenia" required/>                        
+                        <p>Debe contener al menos 8 caracteres</p>
+                        <label for="repetir-contrasenia"> Repetir Contraseña: <span class="requerido">*</span></label>                        
+                        <input type="password" id="repetir-contrasenia" required/>
+                        <img src="img/captcha.png" alt="captcha" class="captcha">
+                        <div class="botones-redes">
+                            <p>Tengo cuenta <span class="link"><a href="form.html">Iniciar Sesion</a></span> </p>
+                            <img src="img/IniciarFacebook.png" alt="iniciar sesion con Facebook">
+                            <img src="img/IniciarApple.png" alt="iniciar sesion con Appel">
+                            <img src="img/SeguirConGoogle.png" alt="iniciar sesion con Google">
+                        </div>                        
+                        <button class="boton" id="btn-registro">
+                            <div class="no-mostrar fondo-animado" id="banner-exitoso">
+                                <div class="texto-en-fondo">
+                                    &#128077; OK
+                                </div>
+                            </div>
+                            Registrar
+                        </button>
+                        <p>Ir al correo ingresado para verificar la cuenta</p>
+                    </div>                    
+                </form>
+        </section>
+        </main>
+        <footer class="grid-footer">
+            <div class="columna-footer">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Clásicos</a></li>
+                    <li><a href="#">De acción</a></li>
+                    <li><a href="#">Aventuras</a></li>
+                    <li><a href="#">De animales</a></li>
+                    <li><a href="#">De deportes</a></li>
+                    <li><a href="#">Educativos</a></li>
+                    <li><a href="#">Lógica</a></li>
+                    <li><a href="#">Puzzles</a></li>
+                    <li><a href="#">RPG</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Estrategia</a></li>
+                    <li><a href="#">Juegos de Mesa</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Mas Jugados</h3>
+                <ul>
+                    <li><a href="#">Super Mario</a></li>
+                    <li><a href="#">Barbie vs Ken</a></li>
+                    <li><a href="#">Wonder Boy</a></li>
+                    <li><a href="#">4 en Linea Clásico</a></li>
+                    <li><a href="#">Among Us</a></li>
+                    <li><a href="#">Geometry Dash</a></li>
+                    <li><a href="#">Puzzle Bobble</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Términos de uso</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Uso de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Nosotros</h3>
+                <p><span>     Juega online y sin preocupaciones: puedes jugar a todos nuestros juegos sin descargar. ¡Pero cuidado! Nuestros juegos de acción solo son aptos para los más atrevidos.
+                    Competirás con grandes pilotos en nuestros juegos de carreras, podrás poner a prueba al estratega que llevas dentro en todos nuestros juegos de estrategia; Sólo los auténticos exploradores llegarán a su meta en los juegos de aventura. Y para los clásicos, las versiones clásicas y no tan clásicas de los clásicos juegos de mesa. ¡Muchos de los juegos son gratis! ¡y no necesitas descargarlos!</span></p>
+            </div>
+            <div class="grid-fila-footer">Fila Copyright</div>
+        </footer>
+        <script src="scripts/script.js"></script>
+</body>
+</html>

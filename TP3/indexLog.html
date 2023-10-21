@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <title>A Jugar! tu sitio para viciar</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="encabezado">
+            <section class="nav-fila-superior">
+                <div class="nav-logo">
+                    <a href="#"><img src="img/Logo.png" alt="A Jugar! tu sitio para viciar"></a>
+                </div>
+                <div class="contenedor-nav">                
+                    <div class="nav-busqueda">                        
+                        <input class="input-busqueda" type="text" placeholder="¿A qué jugamos hoy?">
+                        <button><img src="img/Lupa.png" alt=""></button>  
+                    </div>
+                    <div class="nav-menu">
+                        <section>
+                            <a href="#"><img src="img/CarritoDosCompras.svg" alt="" id="btn-carrito"></img></a>
+                            <a href="#"><img src="img/AvatarLogueado.svg" alt="" id="btn-avatar"></img></a>
+                            <a href="#"><img src="img/hamburguesa.png" alt="" id="menu-toggle"></img></a>
+                        </section>                       
+                    </div>
+                </div>
+            </section>
+                <div class="nav-breadcrumbs">
+                    <p><a href="#">Inicio</a></p>
+                </div>
+        </header>
+        <section class="carrito-compras no-mostrar" id="carrito">
+            <div class="fila-carrito">
+                <img src="img/Diablo.png" alt="">
+                <div class="items-carrito">
+                    <span>Diablo IV</span>
+                    <span>$200</span>
+                </div>
+            </div>
+            <div class="fila-carrito">
+                <img src="img/SuperMario.png" alt="">
+                <div class="items-carrito">
+                    <span>Super Mario</span>
+                    <span>$200</span>
+                </div>
+            </div>
+            <div class="fila-carrito linea-total"></div>
+            <div class="fila-carrito">
+                <img src="" alt="">
+                <div class="items-carrito">
+                    <span class="total">TOTAL</span>
+                    <span>$400</span>
+                </div>
+            </div>
+            <div class="fila-carrito">
+                <button>Confirmar compra</button>
+            </div>
+        </section>
+        <nav class="no-mostrar" id="nav-avatar">
+            <ul class="lista-avatar">
+                <li><a href="#">Mi perfil</a></li>
+                <li><a href="#">Editar mi perfil</a></li>
+                <li><a href="#">Configuracion de cuenta</a></li>
+                <li><a href="#">Soporte</a></li>
+                <li><a href="index.html">Cerrar Sesion</a></li>
+            </ul>                 
+        </nav>
+        <nav class="no-mostrar" id="lista-menu">
+            <ul class="lista-menu">
+                <li><a href="indexLog.html">Inicio</a></li>
+                <li><a href="#">Recientes</a></li>
+                <li><a href="#">Nuevos</a></li>
+                <li><a href="#">Tendencias</a></li>
+                <li><a href="#">Actualizados</a></li>
+                <li><a href="#">Clasicos</a></li>
+                <li><a href="#">De acción</a></li>
+                <li><a href="#">Aventuras</a></li>
+                <li><a href="#">De animales</a></li>
+                <li><a href="#">De deportes</a></li>
+                <li><a href="#">Educativos</a></li>
+                <li><a href="#">Lógica</a></li>
+                <li><a href="#">Puzzles</a></li>
+                <li><a href="#">RPG</a></li>
+                <li><a href="#">Carreras</a></li>
+                <li><a href="#">Estrategia</a></li>
+                <li><a href="#">Juegos de mesa</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="contenedor-cargador">
+                <div class="cargador">
+                    <div class="texto-cargador">CARGANDO</div>
+                    <div class="barra"></div>
+                    <div class="porcentaje">0%</div>
+                </div>
+            </div>
+            <section class="carrusel-destacado">
+                <ul>
+                    <li id="diablo">                        
+                        <div class="card-destacada" >
+                            <span class="selector-anterior"><a href="#lineageII">&lt;</a></span>
+                            <img class="imagen-card-destacada" src="img/Diablo-destacada.png" alt="Diablo">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Diablo IV</h3>
+                                <p class="descripcion-card-destacada">Diablo® IV es el mejor juego de rol de acción con una maldad infinita que derrotar, habilidades que dominar y mazmorras de pesadilla.</p>
+                                <div class="boton-carrito"><button>$200<img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#minecraft">&gt;</a></span>
+                        </div>                        
+                    </li>
+                    <li id="minecraft">
+                        <div class="card-destacada">
+                            <span class="selector-anterior"><a href="#diablo">&lt</a></span>
+                            <img class="imagen-card-destacada" src="img/Minecraft-destacada.png" alt="Minecraft">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Minecraft</h3>
+                                <p class="descripcion-card-destacada">Podes modelar el mundo a tu gusto, destruir y construir, como si estuvieras jugando en una caja de arena.</p>
+                                <div class="boton-carrito"><button>$200<img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#superMario">&gt</a></span>
+                         </div>
+                    </li>
+                    <li id="superMario">
+                        <div class="card-destacada">
+                            <span class="selector-anterior"><a href="#minecraft">&lt</a></span>
+                            <img class="imagen-card-destacada" src="img/SuperMario-destacada.png" alt="SuperMario">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Super Mario</h3>
+                                <p class="descripcion-card-destacada">Increíble juego de aventuras donde el fontanero Mario y su hermano Luigi harán de las suyas para rescatar a la princesa.</p>
+                                <div class="boton-carrito"><button>$200<img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#geometryDash">&gt</a></span>
+                        </div>
+                    </li>
+                    <li id="geometryDash">
+                        <div class="card-destacada">
+                            <span class="selector-anterior"><a href="#superMario">&lt</a></span>
+                            <img class="imagen-card-destacada" src="img/GeometryDash-destacada.png" alt="GeometryDash">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Geometry Dash</h3>
+                                <p class="descripcion-card-destacada">¡Salta y vuela a través del peligro en este juego de plataformas de acción basado en el ritmo!</p>
+                                <div class="boton-carrito"><button>$200<img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#amongUs">&gt</a></span>
+                        </div>
+                    </li>
+                    <li id="amongUs">
+                        <div class="card-destacada">
+                            <span class="selector-anterior"><a href="#geometryDash">&lt</a></span>
+                            <img class="imagen-card-destacada" src="img/AmongUs-destacada.png" alt="AmongUs">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Among Us</h3>
+                                <p class="descripcion-card-destacada">Un juego de aventuras donde te vas a poner en la piel de un impostor que se infiltró en una tripulación de astronautas</p>
+                                <div class="boton-carrito"><button>GRATIS<img src="img/play.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#lineageII">&gt</a></span>
+                        </div>
+                    </li>
+                    <li id="lineageII">                        
+                        <div class="card-destacada">
+                            <span class="selector-anterior"><a href="#amongUs">&lt</a></span>
+                            <img class="imagen-card-destacada" src="img/lineageII-destacada.png" alt="LineageII">
+                            <div class="texto-card-destacada">
+                                <h3 class="titulo-card-destacada">Lineage II</h3>
+                                <p class="descripcion-card-destacada">Lineage II es un reino en constante expansión que está esperando ser descubierto. Únete con tus aliados para derrotar a algunas de las bestias más temibles e impresionantes jamás vistas, como colosales dragones.</p>
+                                <div class="boton-carrito"><button>$200<img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                            </div>
+                            <span class="selector-posterior"><a href="#diablo">&gt</a></span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="seccion-categorias">
+                <article>
+                    <h2 class="titulo-carrusel-card">Mis Juegos</h2>
+                    <ul class="carrusel-slider">
+                        <li>
+                            <div class="card">
+                                <img class="imagen-card" src="img/BarbieVsKen.png" alt="BarbieVsKen">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Barbie Vs Ken</h3>
+                                    <p class="descripcion-card">Una nueva edición del tradicional juego 4 en línea donde Barbie y Ken demostrarán que no son solo una cara bonita.</p>
+                                    <div class="boton-card"><a href="juego.html"><button><span>JUGAR</span><img src="img/play.svg" alt=""></button></a></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article><h2 class="titulo-carrusel-card">Recomendados</h2>
+                    <ul class="carrusel-slider">
+                        <li>
+                            <div class="card">
+                                <img class="imagen-card" src="img/Diablo.png" alt="Diablo">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Diablo IV</h3>
+                                    <p class="descripcion-card">Diablo® IV es el mejor juego de rol de acción con una maldad infinita que derrotar, habilidades que dominar y mazmorras de pesadilla.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                            <img class="imagen-card" src="img/ogame.png" alt="Ogame">
+                                <div class="texto-card">
+                                <h3 class="titulo-card">Ogame</h3>
+                                <p class="descripcion-card">Juego de estrategia espacial. Vas a fundar una pequeña colonia en un planeta deshabitado, usaras recursos y llegaras hasta las estrellas.
+                                </p>
+                                <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                            <img class="imagen-card" src="img/PacMan.png" alt="PacMan">
+                                <div class="texto-card">
+                                <h3 class="titulo-card">Pac-Man</h3>
+                                <p class="descripcion-card">Emprende un emocionante viaje y diviértete con varios diseños de laberinto con obstáculos y potenciadores.
+                                </p>
+                                <div class="boton-card"><button><span>GRATIS</span><img src="img/play.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                            <img class="imagen-card" src="img/Argentum.png" alt="Argentum">
+                                <div class="texto-card">
+                                <h3 class="titulo-card">Argentum</h3>
+                                <p class="descripcion-card">Juego de rol multijugador en el que podrás formar parte de grandes luchas, torneos y misiones
+                                </p>
+                                <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card">
+                                <img class="imagen-card" src="img/LeagueOfLegends.png" alt="LeagueOfLegends">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">League Of Legends</h3>
+                                    <p class="descripcion-card">Juego de estrategia por equipos en el que dos equipos de cinco campeones se enfrentan para ver quién destruye antes la base del otro.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/AmongUs.png" alt="AmongUs">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Among Us</h3>
+                                    <p class="descripcion-card">Un juego de aventuras donde te vas a poner en la piel de un impostor que se infiltró en una tripulación de astronautas.</p>
+                                    <div class="boton-card"><button><span>GRATIS</span><img src="img/play.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/lineageII.png" alt="lineageII">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Lineage II</h3>
+                                    <p class="descripcion-card">Lineage II es un reino en constante expansión que está esperando ser descubierto. Únete con tus aliados para derrotar a algunas de las bestias más temibles e impresionantes jamás vistas, como colosales dragones.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/CallOfDuty.png" alt="CallOfDuty">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Call of Duty</h3>
+                                    <p class="descripcion-card">Juego de guerra, desarrollado en distintos escenarios, podes optar por distintos modos multijugador.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article><h2 class="titulo-carrusel-card">Juegos de Mesa</h2>
+                    <ul class="carrusel-slider">
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/BarbieVsKen.png" alt="BarbieVsKen">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Barbie Vs Ken</h3>
+                                    <p class="descripcion-card">Una nueva edición del tradicional juego 4 en línea donde Barbie y Ken demostrarán que no son solo una cara bonita.</p>
+                                    <div class="boton-card"><a href="juego.html"><button><span>JUGAR</span><img src="img/play.svg" alt=""></button></a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/CueBilliardClub.png" alt="CueBilliardClub">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Cue Billard Club</h3>
+                                    <p class="descripcion-card">Este estupendo juego pool funciona con tecnología WebGL para funcionar sin problemas en todos los navegadores modernos. Si disfrutas jugando a esto, deberías jugar también a nuestros otros juegos de billar</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/Mahjongg.png" alt="Mahjongg">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Mahjongg</h3>
+                                    <p class="descripcion-card">El Solitario Mahjongg es un juego de mahjong con reglas tradicionales y efectos visuales modernos. No hay barajados y el juego es cronometrado, pero el ritmo del juego es relajado.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/ClassicBackgammon.png" alt="ClassicBackgammon">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Backgammon Online</h3>
+                                    <p class="descripcion-card">Este juego existe desde hace años, y este título clásico tiene toda la jugabilidad y reglas estándar.
+                                        El tablero tiene un aspecto magnífico, y los gráficos y la jugabilidad son fluidos. ¡Pon a prueba tus habilidades de backgammon hoy mismo y desafía a gente de todo el mundo!</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/MiniBables.png" alt="MiniBables">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">12 MiniBattles</h3>
+                                    <p class="descripcion-card">Este adictivo juego los mantendrá a ti y a tu amigo entretenidos durante horas. Juega a todos los juegos y pasa horas superando a tus amigos. ¡Diviértete y gana todas las partidas!</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article><h2 class="titulo-carrusel-card">Infantiles</h2>
+                    <ul class="carrusel-slider">
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/GarrysMod.png" alt="GarrysMod">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Garry Mod</h3>
+                                    <p class="descripcion-card">Te permite manipular objetos y experimentar con la física con su mítica arma "Physics Gun”
+                                    </p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/PacMan.png" alt="PacMan">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">PacMan</h3>
+                                    <p class="descripcion-card">Te permite manipular objetos y experimentar con la física con su mítica arma "Physics Gun”
+                                    </p>
+                                    <div class="boton-card"><button><span>GRATIS</span><img src="img/play.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/BubbleBoubble.png" alt="BubbleBoubble">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Bubble Bubble</h3>
+                                    <p class="descripcion-card">Cada nivel será un poco más difícil. Pero asegúrate de revisar cada nivel si no hay atajos fáciles, ya que éstos están incorporados en algunos niveles.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/WonderBoy.png" alt="WonderBoy">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Wonder Boy</h3>
+                                    <p class="descripcion-card">El protagonista de Wonder Boy es un personaje conocido como Tom-Tom, un cavernícola cuya novia, llamada Tanya, ha sido capturada por un terrible monstruo.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/CandyBuble.png" alt="CandyBuble">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Candy Bubble</h3>
+                                    <p class="descripcion-card">Es un juego bubble shooter extraordinario que puedes disfrutar. Asegurate de apuntar bien y juntar la mayor cantidad de bubbles del mismo color</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article><h2 class="titulo-carrusel-card">Aventuras</h2>
+                    <ul class="carrusel-slider">
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/SuperMario.png" alt="SuperMario">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Super Mario</h3>
+                                    <p class="descripcion-card">Con tu ayuda, los fontaneros Mario y Luigi deben rescatar a la Princesa Peach, quien fue secuestrada por Bowser, el rey de los Koopas, y salvar al Reino Champiñón.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/SuperMarioBros.png" alt="SuperMarioBros">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Super Mario Bros.</h3>
+                                    <p class="descripcion-card">Ayuda a Mario a rescatar la princesa, evita los obstáculos y alcanza la meta!</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/SlimeRancher.png" alt="SlimeRancher">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Slime Rancher 2</h3>
+                                    <p class="descripcion-card">Continuas aventuras  a través del Mar de Limo hasta la Isla Arcoíris, una tierra repleta de misterios</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/Kartrider.png" alt="Kartrider">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Kartrider Drift</h3>
+                                    <p class="descripcion-card">Kartrider Drift es un juego de carreras de karts con las emociones del arcade, las competencias más veloces</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                             <div class="card">
+                                <img class="imagen-card" src="img/PlantsVsZombies.png" alt="PlantsVsZombies">
+                                <div class="texto-card">
+                                    <h3 class="titulo-card">Plants Vs Zombies</h3>
+                                    <p class="descripcion-card">El conflicto entre plantas y zombis te hará recorrer una y otra vez hasta el último rincón de Neighborville.</p>
+                                    <div class="boton-card"><button><span>$200</span><img src="img/agregarAlCarrito.svg" alt=""></button></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+        <footer class="grid-footer">
+            <div class="columna-footer">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Clásicos</a></li>
+                    <li><a href="#">De acción</a></li>
+                    <li><a href="#">Aventuras</a></li>
+                    <li><a href="#">De animales</a></li>
+                    <li><a href="#">De deportes</a></li>
+                    <li><a href="#">Educativos</a></li>
+                    <li><a href="#">Lógica</a></li>
+                    <li><a href="#">Puzzles</a></li>
+                    <li><a href="#">RPG</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Estrategia</a></li>
+                    <li><a href="#">Juegos de Mesa</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Mas Jugados</h3>
+                <ul>
+                    <li><a href="#">Super Mario</a></li>
+                    <li><a href="#">Barbie vs Ken</a></li>
+                    <li><a href="#">Wonder Boy</a></li>
+                    <li><a href="#">4 en Linea Clásico</a></li>
+                    <li><a href="#">Among Us</a></li>
+                    <li><a href="#">Geometry Dash</a></li>
+                    <li><a href="#">Puzzle Bobble</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Términos de uso</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Uso de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h3>Nosotros</h3>
+                <p><span>     Juega online y sin preocupaciones: puedes jugar a todos nuestros juegos sin descargar. ¡Pero cuidado! Nuestros juegos de acción solo son aptos para los más atrevidos.
+                    Competirás con grandes pilotos en nuestros juegos de carreras, podrás poner a prueba al estratega que llevas dentro en todos nuestros juegos de estrategia; Sólo los auténticos exploradores llegarán a su meta en los juegos de aventura. Y para los clásicos, las versiones clásicas y no tan clásicas de los clásicos juegos de mesa. ¡Muchos de los juegos son gratis! ¡y no necesitas descargarlos!</span></p>
+            </div>
+            <div class="grid-fila-footer">Fila Copyright</div>
+        </footer>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/scriptCarga.js"></script>
+</body>
+</html>
