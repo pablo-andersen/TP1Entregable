@@ -97,6 +97,72 @@
                 <div class="ventana-juego">
                     <canvas id="juego-4-en-linea" width="960" height="580"></canvas>
                 </div>
+                <div class="ventana-juego pre-juego" id="pre-juego">
+                    <form class="opciones-juego">
+                        <fieldset class="fieldset-contenedor">
+                            <legend>Barbie Vs Ken  - Seleccioná tu juego</legend>
+                            <div class="fieldset-fila">
+                                <span>
+                                    <label for="j1">Nombre Jugador 1:</label>
+                                    <input type="text" class="input-jugador" id="j1" name="j1" required size="25">
+                                </span>
+                                <span>                                    
+                                    <label for="j2">Nombre Jugador 2:</label>
+                                    <input type="text" class="input-jugador" id="j2" name="j2" required size="25">
+                                </span>
+                            </div>
+                            <fieldset class="fieldset-nivel1">
+                                <legend>Seleccionar ficha Jugador 1</legend>
+                                <div class="radio-grupo">                                    
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f1" value="ficha1" id="f1">
+                                        <img src="../TP3/img/FichaBarbie01.png" alt="Opción 1">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f1" value="ficha2" id="f2">
+                                        <img src="../TP3/img/FichaBarbie02.png" alt="Opción 2">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f1" value="ficha3" id="f3">
+                                        <img src="../TP3/img/FichaBarbie03.png" alt="Opción 3">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f1" value="ficha4" id="f4">
+                                        <img src="../TP3/img/FichaBarbie04.png" alt="Opción 4">
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset-nivel1">
+                                <legend>Seleccionar ficha Jugador 2:</legend>
+                                <div class="radio-grupo">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f2" value="ficha1" id="f1">
+                                        <img src="../TP3/img/FichaKen01.png" alt="Opción 5">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f2" value="ficha2" id="f2">
+                                        <img src="../TP3/img/FichaKen02.png" alt="Opción 6">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f2" value="ficha3" id="f3">
+                                        <img src="../TP3/img/FichaKen03.png" alt="Opción 7">
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="f2" value="ficha4" id="f4">
+                                        <img src="../TP3/img/FichaKen04.png" alt="Opción 8">
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="fieldset-nivel1">
+                                <legend>Seleccioná la modalidad del juego</legend>
+                                <button class="boton-comentario boton-juego">4 en línea</button>
+                                <button class="boton-comentario boton-juego">5 en línea</button>
+                                <button class="boton-comentario boton-juego">6 en línea</button>
+                                <button class="boton-comentario boton-juego">7 en línea</button>
+                            </fieldset>
+                        </fieldset>                        
+                    </form>
+                </div>
                 <div class="redes">
                    <ul>
                     <li><img src="img/botonCompartir.svg" alt=""></li>
@@ -294,6 +360,6 @@
             <div class="grid-fila-footer">Fila Copyright</div>
         </footer>
         <script src="scripts/script.js"></script>
-        <script src="scripts/Juego.js"></script>
+        <script src="scripts/Main.js"></script>
 </body>
 </html>

@@ -29,7 +29,8 @@
     --negro55op: rgba(14,7,29,0.55);
     --negro85op: rgba(14,7,29,0.85);
     --blanco75op: rgba(255,255,255,0.75);
-    --secundario90op: rgba(120, 68, 220, .9);
+    --secundario65op: rgba(120, 68, 220, .65);
+    --acento75op: rgba(242, 75, 235, 0.75);
 }
 
 *{
@@ -793,11 +794,22 @@ footer.grid-footer {
     }
 
     .ventana-juego {
-        width: 100%;
+        position: relative;
+        width: 960px;
+        height: 580px;
+    }
+
+    .pre-juego {
+        position: absolute;
+        top: 240px;
+        background-color: var(--secundario65op);
+        /*background-image: url("../img/FondoJuego.png");
+        background-repeat: no-repeat;*/
     }
 
     .ventana-juego canvas {
-        background-color: #FFF;
+        background-image: url("../img/FondoJuego.png");
+
     }
     
     .contenedor-juego>h1 {
@@ -808,10 +820,89 @@ footer.grid-footer {
         padding-left: 80px;
     }
 
-  
+    .opciones-juego{
+        display: flex;
+        justify-content: center;
+        width: 800px;
+        margin: auto;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        color: var(--blanco);
+        font-size: 12pt;
+    }
+
+    .radio-grupo {
+        margin: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .custom-radio {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .custom-radio input[type="radio"] {
+        display: none;
+    }
+
+    .custom-radio input[type="radio"]:checked + img {
+        border-color: var(--blanco); /* Color del borde cuando está seleccionado */
+    }
+
+    .custom-radio img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        transition: border-color 0.5s ease;
+      }
+
+    .fieldset-contenedor{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .fieldset-contenedor>legend {
+        font-size: 24pt;
+    }
+    .fieldset-fila {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        padding: 10px;
+        font-size: 10pt;
+    }
+    .fieldset-nivel1{
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .input-jugador{
+        background: var(--secundarioS1);
+        border: 2.5px solid var(--secundarioL1);
+        border-radius: 20px;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 10pt;
+        font-style: normal;
+        color: var(--blanco);
+        padding-left: 10px;
+    }
     
-    .redes li {
-       
+    .boton-juego {
+        color: var(--blanco75op);
+    }
+    .redes li {       
         list-style: none;
         display: inline;
     }

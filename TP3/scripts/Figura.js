@@ -4,8 +4,10 @@ class Figura {
         this.posY = posY;
         this.fill = fill;
         this.context = context;
+        this.figuras = [];
+        this.ultimaFiguraClickeada = null;
+        this.isMouseDown = false;
     }
-
     getPosX(){
         return this.posX;
     }
@@ -13,12 +15,17 @@ class Figura {
     getPosY(){
         return this.getPosY;
     }
-
+    
     getPosition(){
         return {
             x: this.getPosX(),
-            y: this.getPosY()
+            y: this.getPosY(),
         };
+    }
+    
+    setPosition(posX, posY){
+        this.posX = posX;
+        this.posY = posY;
     }
 
     getFill(){
@@ -31,5 +38,15 @@ class Figura {
 
     draw(){
         this.context.fillStyle = this.fill;
+    }
+
+    isPointInside(posX, posY){};
+
+    //Represento en el canvas un objeto dado
+    drawFigure(){
+        clearCanvas();
+        for (let i = 0; i < figuras.length; i++){
+            figuras[i].draw();
+        }
     }
 }
