@@ -26,11 +26,14 @@
     --alerta:#EC5151;
     --banner:#282DE3;
     --negro20op: rgba(14,7,29,0.2);
+    --negro35op: rgba(0,0,0,0.35);
     --negro55op: rgba(14,7,29,0.55);
     --negro85op: rgba(14,7,29,0.85);
     --blanco75op: rgba(255,255,255,0.75);
     --secundario65op: rgba(120, 68, 220, .65);
     --acento75op: rgba(242, 75, 235, 0.75);
+    --acento35op: rgba(242, 75, 235, 0.35);
+    --acento45op: rgba(242, 75, 235, 0.45);
 }
 
 *{
@@ -803,8 +806,6 @@ footer.grid-footer {
         position: absolute;
         top: 240px;
         background-color: var(--secundario65op);
-        /*background-image: url("../img/FondoJuego.png");
-        background-repeat: no-repeat;*/
     }
 
     .ventana-juego canvas {
@@ -818,89 +819,6 @@ footer.grid-footer {
         text-align: left;
         margin-top: 50px;
         padding-left: 80px;
-    }
-
-    .opciones-juego{
-        display: flex;
-        justify-content: center;
-        width: 800px;
-        margin: auto;
-        margin-top: 15px;
-        flex-wrap: wrap;
-        color: var(--blanco);
-        font-size: 12pt;
-    }
-
-    .radio-grupo {
-        margin: 10px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .custom-radio {
-        display: flex;
-        align-items: center;
-        margin: 5px;
-        cursor: pointer;
-    }
-
-    .custom-radio input[type="radio"] {
-        display: none;
-    }
-
-    .custom-radio input[type="radio"]:checked + img {
-        border-color: var(--blanco); /* Color del borde cuando está seleccionado */
-    }
-
-    .custom-radio img {
-        width: 80px;
-        height: 80px;
-        margin-right: 10px;
-        border: 5px solid transparent;
-        border-radius: 50%;
-        transition: border-color 0.5s ease;
-      }
-
-    .fieldset-contenedor{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 10px;
-    }
-
-    .fieldset-contenedor>legend {
-        font-size: 24pt;
-    }
-    .fieldset-fila {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: auto;
-        padding: 10px;
-        font-size: 10pt;
-    }
-    .fieldset-nivel1{
-        padding: 10px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .input-jugador{
-        background: var(--secundarioS1);
-        border: 2.5px solid var(--secundarioL1);
-        border-radius: 20px;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size: 10pt;
-        font-style: normal;
-        color: var(--blanco);
-        padding-left: 10px;
-    }
-    
-    .boton-juego {
-        color: var(--blanco75op);
     }
     .redes li {       
         list-style: none;
@@ -921,12 +839,12 @@ footer.grid-footer {
         list-style: none;
         display: inline;
     }
-
+    
     .lista-contenido-relacionado p{
         text-align: left;
         padding: 15px;
     }
-
+    
     .lista-contenido-relacionado img{
         width: auto;
     }
@@ -935,11 +853,11 @@ footer.grid-footer {
         flex-direction: row;
         width: 100%;
     }
-
+    
     .contenedor-comunidad > .comunidad {
         width: 70%;
     }
-
+    
     .contenedor-comunidad > .juegos-promocionados {
         width: 30%;
     }
@@ -948,29 +866,29 @@ footer.grid-footer {
         display: flex;
         flex-direction: row;
     }
-
+    
     .posteo img.avatar {
         width: 100px;
         height: 100px;
     }
-
+    
     .posteo-fila-superior {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-
+    
     .posteo textarea {
         background: var(--primarioS3);
         border-radius: 20px;
         padding: 10px;
         color: var(--blanco);
     }
-
+    
     .boton-menu-toggle { /*    Verificar si hay que aplicar algun estilo según como quede*/
         display: block;
     }
-
+    
     ul.lista-menu, ul.lista-avatar {
         position: absolute;
         list-style: none;
@@ -986,7 +904,7 @@ footer.grid-footer {
         -o-background-size: 50% 100%;
         z-index: 9999;
     } 
-     
+    
     ul.lista-menu li a, ul.lista-avatar li a {
         width: 150px;
         -webkit-transition: all 0.3s ease-out;
@@ -1014,32 +932,32 @@ footer.grid-footer {
         -moz-box-shadow: 5px 5px 5px var(--secundarioL1);
         -o-box-shadow: 5px 5px 5px var(--secundarioL1);
     } 
-     
+    
     ul.lista-menu li a:hover, ul.lista-avatar li a:hover {
         background: var(--primarioS2);
         color: var(--blanco75op);
         padding: 7px 15px 7px 30px;
     }
     
-
+    
     form {
         width: 250px;
         margin: 0;
     }
-      
+    
     form p {
         text-align: right;
     }
-      
+    
     .estrellas input[type="radio"] {
         display: none;
     }
-
+    
     .estrellas label {
         font-size: 30px;
         color: var(--primarioS3);
     }
-      
+    
     .clasificacion {
         direction: rtl;
         unicode-bidi: bidi-override;
@@ -1049,16 +967,16 @@ footer.grid-footer {
     .estrellas label:hover ~ label {
         color: var(--secundario);
     }
-      
+    
     .estrellas input[type="radio"]:checked ~ label {
         color: var(--secundario);
     }
-
+    
     .contenido-relacionado {
         display: flex;
         justify-content: space-between;
     }
-
+    
     article.comentario{
         width: 63%;
         display: flex;
@@ -1068,7 +986,7 @@ footer.grid-footer {
         padding-left: 10px;
         padding-bottom: 35px;
     }
-
+    
     .comentario-fila-superior{
         width: 80%;
         display: flex;
@@ -1076,14 +994,14 @@ footer.grid-footer {
         align-items: center;
         padding: 0;
     }
-  
+    
     .comentario-fila-inferior{
         width: 97%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
+    
     .comentario-fila-inferior textarea{
         background-color: var(--primarioS3);
         border-radius: 20px;
@@ -1101,15 +1019,15 @@ footer.grid-footer {
         background-color: var(--secundario);
     }
 
-
+    
     .aside-card {
     transform: scale(0.7);
     transition: transform 0.2s ease;
-    }
+}
 
-    .aside-card:hover{
-        transition: transform 0.2s ease;
-    }
+.aside-card:hover{
+    transition: transform 0.2s ease;
+}
 
     .boton {
         position: relative;
@@ -1141,7 +1059,7 @@ footer.grid-footer {
         background-color: #28a745;
         animation: desplazarFondo 2s linear forwards, escalaOk 2s linear forwards;
     }
-
+    
     .texto-en-fondo {
         position: absolute;
         top: 50%;
@@ -1151,28 +1069,121 @@ footer.grid-footer {
         font-size: 24px;
         font-weight: bold;
     }
-
+    
     @keyframes desplazarFondo {
         0% {
-          left: 100%;
+            left: 100%;
         }
         100% {
-          left: 0%;
+            left: 0%;
         }
     }
-
+    
     @keyframes escalaOk {
         0% {
-          transform: scale(1);
+            transform: scale(1);
         }
         100% {
           transform: scale(1.5);
         }
-      }
-
-      .no-mostrar {
+    }
+    
+    .no-mostrar {
         display: none;
     }
     
     
+    
+    .opciones-juego{
+        display: flex;
+        justify-content: center;
+        width: 800px;
+        margin: auto;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        color: var(--blanco);
+        font-size: 12pt;
+    }
+
+    .radio-grupo {
+        margin: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .custom-radio {
+        display: flex;
+        align-items: center;
+        margin: 5px;
+        cursor: pointer;
+    }
+    
+    .custom-radio input[type="radio"] {
+        display: none;
+    }
+    
+    .custom-radio input[type="radio"]:checked + img {
+        border-color: var(--blanco); /* Color del borde cuando está seleccionado */
+    }
+    
+    .custom-radio img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        transition: border-color 0.5s ease;
+    }
+    
+    .fieldset-contenedor{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .fieldset-contenedor>legend {
+        font-size: 24pt;
+    }
+    .fieldset-fila {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        padding: 10px;
+        font-size: 10pt;
+    }
+    .fieldset-nivel1{
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--acento45op);
+    }
+    
+    .input-jugador{
+        background: var(--secundarioS1);
+        border: 2.5px solid var(--secundarioL1);
+        border-radius: 20px;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 10pt;
+        font-style: normal;
+        color: var(--blanco);
+        padding-left: 10px;
+    }
+    
+    .boton-juego {
+        color: var(--blanco75op);
+        cursor: pointer;
+    }
+    
+    .boton-comenzar{
+        background-color: var(--acento);
+        color: var(--secundarioS2);
+        font-size: large;
+        margin-top: 10px;
+        cursor: pointer;
+    }
 }
