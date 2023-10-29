@@ -4,9 +4,6 @@ class Figura {
         this.posY = posY;
         this.fill = fill;
         this.context = context;
-        this.figuras = [];
-        this.ultimaFiguraClickeada = null;
-        this.isMouseDown = false;
     }
     getPosX(){
         return this.posX;
@@ -42,11 +39,4 @@ class Figura {
 
     isPointInside(posX, posY){};
 
-    //Represento en el canvas un objeto dado
-    drawFigure(){
-        clearCanvas();
-        for (let i = 0; i < figuras.length; i++){
-            figuras[i].draw();
-        }
-    }
 }

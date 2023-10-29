@@ -1125,7 +1125,7 @@ footer.grid-footer {
     }
     
     .custom-radio input[type="radio"]:checked + img {
-        border-color: var(--blanco); /* Color del borde cuando está seleccionado */
+        border-color: var(--blanco); 
     }
     
     .custom-radio img {
@@ -1148,6 +1148,7 @@ footer.grid-footer {
     .fieldset-contenedor>legend {
         font-size: 24pt;
     }
+
     .fieldset-fila {
         display: flex;
         flex-direction: row;
@@ -1156,6 +1157,7 @@ footer.grid-footer {
         padding: 10px;
         font-size: 10pt;
     }
+    
     .fieldset-nivel1{
         padding: 10px;
         display: flex;
@@ -1177,6 +1179,7 @@ footer.grid-footer {
     .boton-juego {
         color: var(--blanco75op);
         cursor: pointer;
+        border-color: var(--secundario);
     }
     
     .boton-comenzar{
@@ -1186,4 +1189,15 @@ footer.grid-footer {
         margin-top: 10px;
         cursor: pointer;
     }
+
+    .fade-out {
+        opacity: 0;
+        transition: opacity 2s; 
+    }
+
+    .seleccionado {
+        border: solid 4px var(--blanco);
+        transition: border-color 1s ease;
+    }
+
 }
