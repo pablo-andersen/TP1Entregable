@@ -35,6 +35,7 @@ class Juego{
         this.canvasHeight = canvasHeight;
         this.canvasWidth = canvasWidth;
         this.context = context;
+        this.turnoJ1 = false;
         this.hayGanador = false;
         this.fichasJ1= [];
         this.fichasJ2= [];
@@ -81,6 +82,10 @@ class Juego{
         let fillStyle = "rgba(240, 40, 40,255)";
         ficha = new Ficha(posX, posY, fillStyle , this.context, this.RADIO, imagenEquipo);
         arreglo.push(ficha);        
+    }
+
+    iniciarTurno(){
+        
     }
 
     hayGanador(){}
