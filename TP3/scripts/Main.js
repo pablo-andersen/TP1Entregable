@@ -79,7 +79,7 @@ botonComenzar.addEventListener('click', (e)=>{
             imagenFicha1.src = fichaJ1;
             let imagenFicha2 = new Image();
             imagenFicha2.src = fichaJ2;
-            let partida = new Juego(canvasWidth, canvasHeight, context, j1.value, j2.value, imagenFicha1, imagenFicha2, modoJuego);
+            let partida = new Juego(canvasWidth, canvasHeight, context, j1.value, j2.value, imagenFicha1, imagenFicha2, modoJuego, canvas);
             partida.iniciarJuego();
         }, 1000);
     } 

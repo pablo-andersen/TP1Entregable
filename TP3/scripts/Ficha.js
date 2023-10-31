@@ -3,9 +3,18 @@ class Ficha extends Figura{
         super(posX, posY, fill, context);
         this.radius = radius;
         this.imagen = imagen;
+        this.disponible = true;
     }
     getradius(){
         return this.radius;
+    }
+
+    getDisponible(){
+        return this.disponible;
+    }
+    
+    setDisponible(valor){
+        this.disponible = valor;
     }
 
     draw(){

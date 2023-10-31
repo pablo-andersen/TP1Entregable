@@ -1,5 +1,5 @@
 class Juego{    
-    constructor(canvasWidth, canvasHeight, context, jug1, jug2, ficha1, ficha2, modoJuego){
+    constructor(canvasWidth, canvasHeight, context, jug1, jug2, ficha1, ficha2, modoJuego, canvas){
         switch (modoJuego) {
             case '4 en línea':
                 this.FILAS = 6;
@@ -21,6 +21,7 @@ class Juego{
               this.FILAS = 6;
               this.COLUMNAS = 7;
         }
+        this.canvas = canvas;
         this.FICHAS_INICIALES = Math.round(this.FILAS * this.COLUMNAS / 2);  
         this.RADIO = 23;
         this.GAP_FICHAS = 6;
@@ -74,6 +75,9 @@ class Juego{
             this.fichasJ1[k].draw();
             this.fichasJ2[k].draw();
         }
+
+        this.iniciarTurno();
+
     }
     
     //instancio una ficha (circulo) y la agrego al arreglo
@@ -85,8 +89,61 @@ class Juego{
     }
 
     iniciarTurno(){
+        this.canvas.addEventListener('mousedown', (e)=>{
+           
+            if(this.turnoJ1){
+                this.recorrerArreglo(this.fichasJ1, e.layerX, e.layerY);
+            } else{
+                this.recorrerArreglo(this.fichasJ2, e.layerX, e.layerY);
+            }
+                
+
+        });
         
     }
+
+    recorrerArreglo(arreglo, posX, posY){
+        for(let i=arreglo.length-1; i>=0; i--){
+            if (arreglo[i].getDisponible()){
+                if (arreglo[i].isPointInside(posX, posY)){
+                    
+                    this.moverFicha(arreglo[i], posX, posY);
+                   
+
+                }
+            }
+           
+        }
+    }
+
+    moverFicha(ficha, posX, posY){
+         console.log(ficha);
+        let posIniX=  ficha.getPosX();
+        let posIniY= ficha.getPosY();
+        let offsetX = posX - posIniX;
+        let offsetY= posY - posIniY;
+        this.canvas.addEventListener('mousemove', (e)=>{
+            ficha.setPosition(e.layerX-offsetX, e.layerY-offsetY);
+            //clearCanvas();
+            this.tablero.draw();
+            for (let ficha of this.fichasJ1.concat(this.fichasJ2)) {
+               
+                    ficha.draw();
+                }
+    
+        });
+        this.canvas.addEventListener( 'mouseup', (e)=>{
+            this.tablero.posicionValida(e.layerX, e.layerY);
+        });
+
+    }
+
+    
+
+
+    
+
+
 
     hayGanador(){}
     
