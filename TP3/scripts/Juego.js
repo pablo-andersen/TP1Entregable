@@ -35,7 +35,7 @@ class Juego{
         this.canvasHeight = canvasHeight;
         this.canvasWidth = canvasWidth;
         this.context = context;
-        this.turnoJ1 = false;
+        this.turnoJ1 = true;
         this.hayGanador = false;
         this.fichasJ1= [];
         this.fichasJ2= [];
