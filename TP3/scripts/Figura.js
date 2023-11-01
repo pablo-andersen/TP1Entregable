@@ -10,7 +10,7 @@ class Figura {
     }
 
     getPosY(){
-        return this.getPosY;
+        return this.posY;
     }
     
     getPosition(){

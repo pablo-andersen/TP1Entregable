@@ -86,5 +86,4 @@ botonComenzar.addEventListener('click', (e)=>{
     else {
         alert('Para continuar selecciona las fichas de cada jugador.');
     }
-    
 });

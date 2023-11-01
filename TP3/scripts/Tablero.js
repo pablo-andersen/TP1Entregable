@@ -19,11 +19,6 @@ class Tablero extends Figura{
     }
 
     draw(){
-        console.log('posX--> ',this.posX );
-        console.log('posY--> ', this.posY );
-        console.log('width--> ', this.width );
-        console.log('height--> ', this.height );
-        console.log('radio--> ', this.RADIO);
         super.draw();
         this.context.fillRect(this.posX, this.posY, this.width, this.height);
         // //Dibujar tablero azul

@@ -75,9 +75,7 @@ class Juego{
             this.fichasJ1[k].draw();
             this.fichasJ2[k].draw();
         }
-
         this.iniciarTurno();
-
     }
     
     //instancio una ficha (circulo) y la agrego al arreglo
@@ -89,35 +87,30 @@ class Juego{
     }
 
     iniciarTurno(){
-        this.canvas.addEventListener('mousedown', (e)=>{
-           
+        this.canvas.addEventListener('mousedown', (e)=>{            
             if(this.turnoJ1){
-                this.recorrerArreglo(this.fichasJ1, e.layerX, e.layerY);
-            } else{
-                this.recorrerArreglo(this.fichasJ2, e.layerX, e.layerY);
-            }
-                
-
+                    this.recorrerArreglo(this.fichasJ1, e);
+                } else{
+                        this.recorrerArreglo(this.fichasJ2, e);
+                    }
         });
-        
     }
-
-    recorrerArreglo(arreglo, posX, posY){
+            
+    recorrerArreglo(arreglo, e){
         for(let i=arreglo.length-1; i>=0; i--){
             if (arreglo[i].getDisponible()){
-                if (arreglo[i].isPointInside(posX, posY)){
-                    
-                    this.moverFicha(arreglo[i], posX, posY);
-                   
-
+                if (arreglo[i].isPointInside(e.layerX, e.layerY)){
+                    this.moverFicha(arreglo[i], e.layerX, e.layerY);
+                    break;
                 }
-            }
-           
+            }           
         }
     }
-
+    
     moverFicha(ficha, posX, posY){
-         console.log(ficha);
+        console.log(ficha);
+        console.log(posX);
+        console.log(posY);
         let posIniX=  ficha.getPosX();
         let posIniY= ficha.getPosY();
         let offsetX = posX - posIniX;
@@ -127,15 +120,12 @@ class Juego{
             //clearCanvas();
             this.tablero.draw();
             for (let ficha of this.fichasJ1.concat(this.fichasJ2)) {
-               
                     ficha.draw();
                 }
-    
         });
         this.canvas.addEventListener( 'mouseup', (e)=>{
             this.tablero.posicionValida(e.layerX, e.layerY);
         });
-
     }
 
     
@@ -157,4 +147,6 @@ class Juego{
     //Tambien verificar si columna es valida.
 
     //Verificar ganador con 3 doble for y un for simple (para verificar vertical)
+
+    //dibujar puntos de colores en el click del mouse, para ver cuál es el que nos sirveº
 }
