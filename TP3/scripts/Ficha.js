@@ -4,7 +4,18 @@ class Ficha extends Figura{
         this.radius = radius;
         this.imagen = imagen;
         this.disponible = true;
+        this.posIniX = posX;
+        this.posIniY = posY;
     }
+
+    getPosIniX(){
+        return this.posIniX;
+    }
+    
+    getPosIniY(){
+        return this.posIniY;
+    }
+
     getradius(){
         return this.radius;
     }

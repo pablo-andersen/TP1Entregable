@@ -5,14 +5,14 @@
     --primario:#045593;
     --primarioS1:#014171;
     --primarioS2:#023052;
-    --primarioS3:#111A2A;
+    --primarioS3:#111a2a;
     --secundarioL3:#E0D4F8;
     --secundarioL2:#C5A7FF;
     --secundarioL1:#9A65FF;
     --secundario:#7844DC;
     --secundarioS1:#5831A2;
     --secundarioS2:#472686;
-    --secundarioS3: #1F123A;
+    --secundarioS3: #1f123a;
     --acentoL3:#F6C9F4;
     --acentoL2:#F6A2F3;
     --acentoL1:#F373EE;
@@ -808,11 +808,6 @@ footer.grid-footer {
         background-color: var(--secundario65op);
     }
 
-    .ventana-juego canvas {
-        background-image: url("../img/FondoJuego.png");
-
-    }
-    
     .contenedor-juego>h1 {
         width: 100%;
         font-size: 40px;

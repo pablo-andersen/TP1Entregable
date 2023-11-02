@@ -40,18 +40,25 @@ class Juego{
         this.hayGanador = false;
         this.fichasJ1= [];
         this.fichasJ2= [];
+        this.fichaSeleccionada = null;
     }
     
     iniciarJuego(){
         //inicializa los parámetros del juego y del tablero.
-        let fillStyle = "rgba(71,38,134,255)";
+        
+        //Controller
+        // instancia un tablero vacío.
         this.ANCHO_TABLERO = (this.COLUMNAS*(this.RADIO*2)) + (this.GAP_FICHAS*(this.COLUMNAS+1));
         this.ALTURA_TABLERO = (this.FILAS*(this.RADIO*2)) + (this.GAP_FICHAS*(this.FILAS+1));
         this.POS_X_INI_TABLERO = (this.canvasWidth - this.ANCHO_TABLERO) / 2;
         this.POS_Y_INI_TABLERO = (this.canvasHeight - this.ALTURA_TABLERO) / 2;
-        
-        // instancia un tablero y lo dibuja vacío.
+        let fillStyle = "rgba(71,38,134,255)";
         this.tablero = new Tablero(this.POS_X_INI_TABLERO, this.POS_Y_INI_TABLERO, fillStyle, this.context, this.ANCHO_TABLERO, this.ALTURA_TABLERO, this.GAP_FICHAS, this.FILAS, this.COLUMNAS, this.RADIO);
+        this.tablero.inicializarTablero(this.FILAS, this.COLUMNAS);
+        
+        //View
+        //dibuja el tablero
+        this.clearCanvas();
         this.tablero.draw();
         
         // instancia las fichas, las agrega al arreglo de cada jugador y las dibuja en su posicion inicial.
@@ -100,53 +107,79 @@ class Juego{
         for(let i=arreglo.length-1; i>=0; i--){
             if (arreglo[i].getDisponible()){
                 if (arreglo[i].isPointInside(e.layerX, e.layerY)){
-                    this.moverFicha(arreglo[i], e.layerX, e.layerY);
+                    this.fichaSeleccionada = arreglo[i];
+                    this.moverFicha(e.layerX, e.layerY);
                     break;
                 }
             }           
         }
     }
     
-    moverFicha(ficha, posX, posY){
-        console.log(ficha);
-        console.log(posX);
-        console.log(posY);
-        let posIniX=  ficha.getPosX();
-        let posIniY= ficha.getPosY();
-        let offsetX = posX - posIniX;
-        let offsetY= posY - posIniY;
-        this.canvas.addEventListener('mousemove', (e)=>{
-            ficha.setPosition(e.layerX-offsetX, e.layerY-offsetY);
-            //clearCanvas();
-            this.tablero.draw();
-            for (let ficha of this.fichasJ1.concat(this.fichasJ2)) {
-                    ficha.draw();
-                }
-        });
-        this.canvas.addEventListener( 'mouseup', (e)=>{
-            this.tablero.posicionValida(e.layerX, e.layerY);
-        });
+    
+    moverFicha(posX, posY){
+        if (this.fichaSeleccionada != null){
+            console.log(this.fichaSeleccionada);
+            console.log(posX);
+            console.log(posY);
+            this.canvas.addEventListener('mousemove',this.onMouseMove); 
+            this.canvas.addEventListener('mouseup', this.onMouseUp); 
+        }
+        
+    }    
+    
+    onMouseMove(e){
+        let offsetX = e.layerX - this.fichaSeleccionada.getPosX();
+        let offsetY= e.layerY - this.fichaSeleccionada.getPosY();
+        this.fichaSeleccionada.setPosition(e.layerX-offsetX, e.layerY-offsetY);
+        this.clearCanvas();
+        this.tablero.draw();
+        for (let ficha of this.fichasJ1.concat(this.fichasJ2)) {
+            ficha.draw();
+        }
     }
-
     
-
-
-    
-
-
-
-    hayGanador(){}
-    
+    onMouseUp(e){
+        this.canvas.removeEventListener('mousemove', this.onMouseMove);
+        let posFichaX = e.layerX-offsetX;
+        let posFichaY = e.layerY-offsetY;
+        if(this.tablero.posicionValida(posFichaX, posFichaY )){
+            let ubicacion = this.tablero.obtenerCasillero(posFichaX, posFichaY);
+            console.log(ubicacion);
+            //     if ((ubicacion.fila == -1) && (ubicacion.columna == -1)){
+                //         devolverAPosicionInicial();
+                //     }
+                //     else {
+                    //         soltarFicha(ubicacion);
+                    //     }
+                    // }
+                    // else {
+                        //     devolverAPosicionInicial();
+        }
+    }
+                
+                clearCanvas(){
+                    let fill = "rgba(2,48,82,255)";
+                    this.context.fillStyle = fill;
+                    this.context.beginPath();
+                    this.context.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
+                    this.context.stroke();
+                }
+                
+                
+                
+                
+                hayGanador(){}
+                
     //CLear canvas debe pintar por encima, pero no cargar la imagen nuevamente a memoria. Vuelve a dibujar la que ya tiene cargada desde el principio. 
     //No ejecutar siempre el onload() de la imagen
 
     //Al hacer mouseDown, guardar el offset para que no se desplace al arrastrar.
     //
-
+    
     //Una vez que encuentro la ficha, retorna el elemento, agrego ahí el addEventListener de MouseDrag() y cuando lo suelto mouseUP, mato el evento creado
     //Tambien verificar si columna es valida.
-
+    
     //Verificar ganador con 3 doble for y un for simple (para verificar vertical)
-
+    
     //dibujar puntos de colores en el click del mouse, para ver cuál es el que nos sirveº
 }
