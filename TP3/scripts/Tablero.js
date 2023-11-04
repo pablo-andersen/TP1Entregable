@@ -48,7 +48,7 @@ class Tablero extends Figura{
                         contenido = this.tablero[f][colRes];
                         console.log('iteracion ' + (f+1) + ': ' + contenido + '. Posicion['+f+']['+colRes+']');
                         if (contenido !== 0){
-                            if (f !== 0) {
+                            if (f == 0) {
                                 colRes = -1;
                             }
                             else {
