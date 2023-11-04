@@ -8,30 +8,47 @@ class Tablero extends Figura{
         this.RADIO = radio;
         this.FILAS = filas;
         this.COLUMNAS = columnas;
-        this.tablero= [[]];
+        this.tablero= [];
     }    
 
     inicializarTablero(filas, columnas){
         for(let f = 0; f < filas; f++){
+            this.tablero[f] = [];
             for(let c = 0; c < columnas; c++){
-                this.tablero[f[c]] = 0;
-                console.log('f-> '+ f + 'c->' + c + ' valor -> ' + this.tablero[f[c]]);
+                this.tablero[f][c] = 0;
             }
         }
-        console.info(this.tablero);
+        console.log ('tablero inicializado');
+        for (let fila of this.tablero){
+            console.log(fila);
+        }
+    }
+
+    ocuparCasillero(fila, columna, turnoJ1){
+        console.log('valor casillero ->', this.tablero[fila][columna]);
+        if(turnoJ1){
+            this.tablero[fila][columna] = 1; 
+        } 
+        else {
+            this.tablero[fila][columna] = 2;
+        }
+        console.log('valor casillero ->', this.tablero[fila][columna]);
     }
 
     obtenerCasillero(posX,posY){
         let filaRes = -1;
         let colRes = -1;
-        console.log(posX+','+posY);
-        for (let c=0; c < this.COLUMNAS; c++){
-            if ((posX > (this.posX + (c+1)*this.gap) + (c*2*this.radio) - (this.gap/2)) && 
-                (posX < (this.posX + ((c+1)*this.gap) + (c+1)*2*this.radio)) + (this.gap/2)) {
-                    colRes = c;                    
-                    for(let f = 0; f < this.FILAS ; f++){
-                        if (this.tablero[f[colRes]] != 0){
-                            if (f != 0) {
+        for (let col=0; col < this.COLUMNAS; col++){
+            if (posX > (this.posX + (col+1)*this.gap) + (col*2*this.RADIO) - (this.gap/2)) {
+                if (posX < (this.posX + (col+1)*this.gap) + ((col+1)*2*this.RADIO) + (this.gap/2)){
+                    colRes = col;   
+                    let contenido;
+                    let f = 0;
+                    while (f < this.FILAS){
+                        contenido = this.tablero[f][colRes];
+                        console.log('iteracion ' + (f+1) + ': ' + contenido + '. Posicion['+f+']['+colRes+']');
+                        if (contenido !== 0){
+                            if (f !== 0) {
                                 colRes = -1;
                             }
                             else {
@@ -39,13 +56,18 @@ class Tablero extends Figura{
                             }
                             break;
                         }
+                        f++;
                     }
-                break;
-            }
-        }
+                    if(f == this.FILAS){
+                        filaRes = f-1;
+                    }
+                    break;
+                }
+            }                 
+        }        
         return {
-            fila:filaRes,
-            columna:colRes,
+            fila: filaRes,
+            columna: colRes
         };
     }
 
@@ -94,10 +116,11 @@ class Tablero extends Figura{
             else {
                 
                 console.log('Posicion no válida');
+                return false;
             }
-
         }
-        else {
+        else {            
+            console.log('Posicion no válida');
             return false;
         }
     }

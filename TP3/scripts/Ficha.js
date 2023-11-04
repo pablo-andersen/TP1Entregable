@@ -8,12 +8,21 @@ class Ficha extends Figura{
         this.posIniY = posY;
     }
 
+    
     getPosIniX(){
         return this.posIniX;
     }
     
+    setPosIniX(valor){
+        this.PosIniX = valor;
+    }
+
     getPosIniY(){
         return this.posIniY;
+    }
+
+    setPosIniY(valor){
+        this.PosIniY = valor;
     }
 
     getradius(){
