@@ -11,6 +11,13 @@ let fichaJ1;
 let fichaJ2;
 let modoJuego;
 
+let minutosTimer;
+let segundosTimer;
+let intervalo;
+let timerWidth = 125;
+let timerHeigth = 50;
+let timerX = (canvasWidth - timerWidth) / 2;
+let timerY = canvasHeight - timerHeigth;
 let FICHAS_INICIALES;
 let RADIO = 23;
 let GAP_FICHAS = 6;
@@ -22,8 +29,8 @@ let nombreJ1;
 let nombreJ2;
 let turnoJ1 = false;
 let hayGanador = false;
-let fichasJ1= [];
-let fichasJ2= [];
+let fichasJ1;
+let fichasJ2;
 var fichaSeleccionada = null;
 let isMouseDown = false;
 let ANCHO_TABLERO;
@@ -143,7 +150,10 @@ canvas.addEventListener('mouseup',onMouseUp);
 
 function iniciarJuego(){
     //inicializa los parámetros del juego y del tablero.
-    
+    minutosTimer = 3;
+    segundosTimer = 0;
+    fichasJ1 = [];
+    fichasJ2 = [];
     // instancia un tablero vacío.
     ANCHO_TABLERO = (COLUMNAS*(RADIO*2)) + (GAP_FICHAS*(COLUMNAS+1));
     ALTURA_TABLERO = (FILAS*(RADIO*2)) + (GAP_FICHAS*(FILAS+1));
@@ -178,6 +188,8 @@ function iniciarJuego(){
         fichasJ1[k].draw();
         fichasJ2[k].draw();
     }
+    dibujarTimer();
+    intervalo = setInterval(timerJuego, 1000);
     iniciarTurno();
 }
 
@@ -251,6 +263,8 @@ function soltarFicha(ubicacion){
     }
     else {
         console.log('terminarJuego();');
+        clearInterval(intervalo);
+        dibujarTimer();
         let jugadorGanador;
         if (turnoJ1){
             jugadorGanador = nombreJ1;
@@ -467,19 +481,84 @@ function verificarGanadorVertical(ubicacion,valorBuscado) {
     }
     if(contador == cantFichasParaGanar){
         hayGanador = true;
-        console.log('Hay ganador!!! Ganó jugador 1? ' + turnoJ1 +'. Las fichas ganadoras se encuentran en las posiciones: ');
-        for (let z= 0 ; z < fichasGanadoras.length; z++){
-            console.log(fichasGanadoras[z]);
-        }
     }
     else {
         fichasGanadoras = [];
     }
 }
 
+function mostrarMensaje(mensaje){
+    let mensajeWidth = 350;
+    let mensajeHeight = 60;
+    let mensajeX = (canvas.width - mensajeWidth) / 2;
+    let mensajeY = (canvasHeight-mensajeHeight) /2;
+    context.fillStyle = "rgba(38,45,227,0.7)";
+    context.fillRect(mensajeX, mensajeY, mensajeWidth, mensajeHeight);
+    let bannerX = canvas.width / 2;
+    let bannerY = (canvasHeight+20) /2;
+    // Dibujar el texto del mensaje
+    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
+    context.fillStyle = "rgba(54,247,43,1)";
+    context.strokeStyle = "black";
+    context.lineWidth = 3;
+    context.textAlign = "center";
+    context.strokeText(mensaje, bannerX, bannerY);
+    context.fillText(mensaje, bannerX, bannerY);
+}
+
+function mostrarGanador(jugador) {    
+    let mensaje = 'Ganó ' + jugador;
+    
+    // Dibujar el Letrero
+    mostrarMensaje(mensaje);
+}
+
+function resaltarFichasGanadoras(fichasGanadoras){
+    for(let i = 0; i < fichasGanadoras.length ; i++){
+        let fila= fichasGanadoras[i].fila;
+        let columna = fichasGanadoras[i].columna;
+        ficha_posX = POS_X_INI_TABLERO + GAP_FICHAS * (columna+1) + (RADIO * 2 * (columna+1)) - RADIO; 
+        ficha_posY = POS_Y_INI_TABLERO + GAP_FICHAS * (fila+1) + (RADIO * 2 * (fila+1)) - RADIO; 
+        context.filter = "blur(3px)";
+        context.beginPath();
+        context.arc(ficha_posX, ficha_posY, RADIO-1,  0, 2 * Math.PI);
+        context.closePath();
+        context.lineWidth = 5;
+        context.strokeStyle = "rgba(54,247,43,255)";
+        context.stroke();
+        context.filter = "none";
+    }
+}
+function dibujarTimer(){
+    let tiempoRestante = String(minutosTimer).padStart(2,'0') + ':' + String(segundosTimer).padStart(2,'0');
+    context.fillStyle = "rgba(242,75,235,1)";
+    context.fillRect(timerX, timerY, timerWidth, timerHeigth);
+    context.beginPath();
+    context.stroke();
+    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
+    context.fillStyle = 'white';
+    context.textAlign = "center";
+    context.fillText(tiempoRestante, (timerX+(timerWidth/2)), (timerY+timerHeigth/1.4));
+}
+
+function timerJuego(){
+    dibujarTimer();
+    if (minutosTimer === 0 && segundosTimer === 0) {
+        clearInterval(intervalo);
+        mostrarMensaje('Tiempo finalizado!');
+      } else {
+        if (segundosTimer === 0) {
+          minutosTimer--;
+          segundosTimer = 59;
+        } else {
+          segundosTimer--;
+        }
+      }
+}
 
 //eventos 
-function onMouseDown(e){    
+function onMouseDown(e){  
+    dibujarTimer();
     let arreglo;
     if(turnoJ1){
         arreglo = fichasJ1;
@@ -501,10 +580,12 @@ function onMouseMove(e){
         for (let ficha of fichasJ1.concat(fichasJ2)) {
             ficha.draw();
         }
+        dibujarTimer();
     }       
 }
 
 function onMouseUp(e){
+    dibujarTimer();
     if (isMouseDown){
         canvas.removeEventListener('mousemove',onMouseMove);
         let posX = fichaSeleccionada.getPosX();
@@ -523,45 +604,5 @@ function onMouseUp(e){
         }
         fichaSeleccionada = null;
         isMouseDown = false;
-    }
-}
-
-function mostrarGanador(jugador, fichasGanadoras) {
-    
-    let mensajeWidth = 350;
-    let mensajeHeight = 60;
-    let mensajeX = (canvas.width - mensajeWidth) / 2;
-    let mensajeY = (canvasHeight-mensajeHeight) /2;
-    let mensaje = 'Ganó ' + jugador;
-    
-    // Dibujar el Letrero
-    context.fillStyle = "rgba(38,45,227,0.5)";
-    context.fillRect(mensajeX, mensajeY, mensajeWidth, mensajeHeight);
-    // Dibujar el texto del mensaje
-    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
-    context.fillStyle = "rgba(54,247,43,255)";
-    context.strokeStyle = "black";
-    context.lineWidth = 3;
-    context.textAlign = "center";
-    let x = canvas.width / 2;
-    let y = (canvasHeight+20) /2;
-    context.strokeText(mensaje, x, y);
-    context.fillText(mensaje, x, y);
-}
-
-function resaltarFichasGanadoras(fichasGanadoras){
-    for(let i = 0; i < fichasGanadoras.length ; i++){
-        let fila= fichasGanadoras[i].fila;
-        let columna = fichasGanadoras[i].columna;
-        ficha_posX = POS_X_INI_TABLERO + GAP_FICHAS * (columna+1) + (RADIO * 2 * (columna+1)) - RADIO; 
-        ficha_posY = POS_Y_INI_TABLERO + GAP_FICHAS * (fila+1) + (RADIO * 2 * (fila+1)) - RADIO; 
-        context.filter = "blur(5px)";
-        context.beginPath();
-        context.arc(ficha_posX, ficha_posY, RADIO-1,  0, 2 * Math.PI);
-        context.closePath();
-        context.lineWidth = 4;
-        context.strokeStyle = "rgba(54,247,43,255)";
-        context.stroke();
-        context.filter = "none";
     }
 }
