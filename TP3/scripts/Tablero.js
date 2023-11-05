@@ -79,6 +79,13 @@ class Tablero extends Figura{
         return this.height;
     }
 
+    getValor(ubicacion){
+        let fila = ubicacion.fila;
+        let columna = ubicacion.columna;
+        let valor = this.tablero[fila][columna];
+        return valor;
+    }
+
     draw(){
         super.draw();
         this.context.fillRect(this.posX, this.posY, this.width, this.height);

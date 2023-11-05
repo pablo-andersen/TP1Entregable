@@ -11,7 +11,7 @@ let fichaJ1;
 let fichaJ2;
 let modoJuego;
 
-let FICHAS_INICIALES
+let FICHAS_INICIALES;
 let RADIO = 23;
 let GAP_FICHAS = 6;
 let MARGEN_HORIZONTAL = 50;
@@ -34,6 +34,8 @@ let imagenFicha1;
 let imagenFicha2;
 let offsetX = 0;
 let offsetY = 0;
+let cantFichasParaGanar;
+let fichasGanadoras = [];
 
 // canvas.addEventListener('mousemove',(e)=>{
    
@@ -97,22 +99,27 @@ botonComenzar.addEventListener('click', (e)=>{
                 case '4 en línea':
                     FILAS = 6;
                     COLUMNAS = 7;
-                  break;
+                    cantFichasParaGanar = 4;
+                    break;
                 case '5 en línea':
                     FILAS = 7;
                     COLUMNAS = 8;
-                  break;
+                    cantFichasParaGanar = 5;
+                    break;
                 case '6 en línea':
                     FILAS = 8;
                     COLUMNAS = 9;
-                  break;
+                    cantFichasParaGanar = 6;
+                    break;
                 case '7 en línea':
                     FILAS = 9;
                     COLUMNAS = 10;
-                  break;
+                    cantFichasParaGanar = 7;
+                    break;
                 default:
-                  FILAS = 6;
-                  COLUMNAS = 7;
+                    FILAS = 6;
+                    COLUMNAS = 7;
+                    cantFichasParaGanar = 4;
             }
             //inicializamos las variables del juego
 
@@ -240,8 +247,226 @@ function soltarFicha(ubicacion){
     for (let ficha of fichasJ1.concat(fichasJ2)) {
         ficha.draw();
     }
-    iniciarTurno();
+    comprobarGanador(ubicacion);
+    if(!hayGanador){
+        iniciarTurno();
+    }
+    else {
+        console.log('terminarJuego();');
+    }
 }
+
+function comprobarGanador(ubicacion){
+    let fila = ubicacion.fila;
+    let col = ubicacion.columna;
+    let valorBuscado;
+    let contador;
+    let valorActual;
+    let filaActual;
+    let columnaActual;
+    let ubicacionActual;
+
+    if (turnoJ1){
+        valorBuscado = 1;
+    }
+    else {
+        valorBuscado = 2;
+    }
+    if (!hayGanador){
+        verificarGanadorVertical(ubicacion,valorBuscado);
+    }
+    if (!hayGanador){
+        verificarGanadorHorizontal(ubicacion,valorBuscado);
+    }
+    if (!hayGanador){
+        verificarGanadorHorizontal(ubicacion,valorBuscado);
+    }
+    if (!hayGanador){
+        verificarGanadorDiagonalAscendente(ubicacion,valorBuscado);
+    }
+    if (!hayGanador){
+        verificarGanadorDiagonalDescendente(ubicacion,valorBuscado);
+    }
+    
+}
+
+function verificarGanadorDiagonalDescendente(ubicacion,valorBuscado){
+    contador = 0;
+    let posGanadora;
+    filaActual = ubicacion.fila;
+    columnaActual = ubicacion.columna;
+    ubicacionActual = {fila:filaActual,columna:columnaActual};
+    valorActual = tablero.getValor(ubicacionActual);
+
+        //Primero cuento hacia la izquierda y arriba
+    while ((columnaActual >= 0) && (filaActual >= 0) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;
+        columnaActual --;
+        filaActual --;
+        if((columnaActual >= 0) && (filaActual >= 0)){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+        //Despues hacia la derecha y abajo
+    columnaActual = ubicacion.columna + 1;
+    filaActual = ubicacion.fila + 1;
+    if((columnaActual < COLUMNAS) && (filaActual < FILAS)){
+        ubicacionActual = {fila:filaActual,columna:columnaActual};
+        valorActual = tablero.getValor(ubicacionActual);
+    }
+    while ((columnaActual >= 0) && (filaActual >= 0) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;
+        columnaActual ++;
+        filaActual ++;
+        if((columnaActual < COLUMNAS) && (filaActual < FILAS)){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+    if(contador == cantFichasParaGanar){
+        hayGanador = true;
+        console.log('Hay ganador!!! Ganó jugador 1? ' + turnoJ1 +'. Las fichas ganadoras se encuentran en las posiciones: ');
+        for (let z= 0 ; z < fichasGanadoras.length; z++){
+            console.log(fichasGanadoras[z]);
+        }
+    }
+    else {
+        fichasGanadoras = [];
+    }
+}
+
+function verificarGanadorDiagonalAscendente(ubicacion,valorBuscado){
+    contador = 0;
+    let posGanadora;
+    filaActual = ubicacion.fila;
+    columnaActual = ubicacion.columna;
+    ubicacionActual = {fila:filaActual,columna:columnaActual};
+    valorActual = tablero.getValor(ubicacionActual);
+
+        //Primero cuento hacia la derecha y arriba
+    while ((columnaActual < COLUMNAS) && (filaActual >= 0) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;
+        columnaActual ++;
+        filaActual --;
+        if((columnaActual < COLUMNAS) && (filaActual >= 0)){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+        //Despues hacia la izquierda y abajo
+    columnaActual = ubicacion.columna - 1;
+    filaActual = ubicacion.fila + 1;
+    if((columnaActual >= 0) && (filaActual < FILAS)){
+        ubicacionActual = {fila:filaActual,columna:columnaActual};
+        valorActual = tablero.getValor(ubicacionActual);
+    }
+    while ((columnaActual >= 0) && (filaActual < FILAS) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;
+        columnaActual --;
+        filaActual ++;
+        if((columnaActual >= 0) && (filaActual < FILAS)){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+    if(contador == cantFichasParaGanar){
+        hayGanador = true;
+        console.log('Hay ganador!!! Ganó jugador 1? ' + turnoJ1 +'. Las fichas ganadoras se encuentran en las posiciones: ');
+        for (let z= 0 ; z < fichasGanadoras.length; z++){
+            console.log(fichasGanadoras[z]);
+        }
+    }
+    else {
+        fichasGanadoras = [];
+    }
+}
+
+function verificarGanadorHorizontal(ubicacion, valorBuscado){
+    contador = 0;
+    let posGanadora;
+    filaActual = ubicacion.fila;
+    columnaActual = ubicacion.columna;
+    ubicacionActual = {fila:filaActual,columna:columnaActual};
+    valorActual = tablero.getValor(ubicacionActual);
+
+        //Primero cuento hacia la izq
+    while ((columnaActual >= 0) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {                
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;
+        columnaActual --;
+        if(columnaActual >= 0){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+        //Despues hacia la der
+    columnaActual = ubicacion.columna + 1;
+    if (columnaActual < COLUMNAS){
+        ubicacionActual = {fila:filaActual,columna:columnaActual};
+        valorActual = tablero.getValor(ubicacionActual);
+    }
+    while ((columnaActual < COLUMNAS) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;             
+        columnaActual ++; 
+        if (columnaActual < COLUMNAS){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+    if(contador == cantFichasParaGanar){
+        hayGanador = true;
+        console.log('Hay ganador!!! Ganó jugador 1? ' + turnoJ1 +'. Las fichas ganadoras se encuentran en las posiciones: ');
+        for (let z= 0 ; z < fichasGanadoras.length; z++){
+            console.log(fichasGanadoras[z]);
+        }
+    }
+    else {
+        fichasGanadoras = [];
+    }
+}    
+
+function verificarGanadorVertical(ubicacion,valorBuscado) {
+    contador = 0;
+    let posGanadora;
+    filaActual = ubicacion.fila;
+    columnaActual = ubicacion.columna;
+    ubicacionActual = {fila:filaActual,columna:columnaActual};
+    valorActual = tablero.getValor(ubicacionActual);
+    
+    while ((filaActual < FILAS) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {           
+        posGanadora = {fila:filaActual,columna:columnaActual};
+        fichasGanadoras.push(posGanadora);
+        contador ++;    
+        filaActual ++;
+        if (filaActual < FILAS){
+            ubicacionActual = {fila:filaActual,columna:columnaActual};           
+            valorActual = tablero.getValor(ubicacionActual);
+        }
+    }
+    if(contador == cantFichasParaGanar){
+        hayGanador = true;
+        console.log('Hay ganador!!! Ganó jugador 1? ' + turnoJ1 +'. Las fichas ganadoras se encuentran en las posiciones: ');
+        for (let z= 0 ; z < fichasGanadoras.length; z++){
+            console.log(fichasGanadoras[z]);
+        }
+    }
+    else {
+        fichasGanadoras = [];
+    }
+}
+
 
 //eventos 
 function onMouseDown(e){    
