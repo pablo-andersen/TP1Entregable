@@ -211,8 +211,7 @@ function recorrerArreglo(arreglo, e){
                 offsetX = e.layerX-posXactual;
                 offsetY = e.layerY-posYactual;
                 fichaSeleccionada.setPosIniX(posXactual);
-                fichaSeleccionada.setPosIniY(posYactual);                
-                console.log('Posicion Inicial  x: ', fichaSeleccionada.getPosIniX() + ' e y: ' + fichaSeleccionada.getPosIniY());
+                fichaSeleccionada.setPosIniY(posYactual);
                 break;
             }
         }           
@@ -232,13 +231,11 @@ function devolverAPosicionInicial(){
 }
 
 function soltarFicha(ubicacion){
-    console.log('Entró a Soltar Ficha');
     let fila = ubicacion.fila;
     let columna = ubicacion.columna;    
 
     ficha_posX = POS_X_INI_TABLERO + GAP_FICHAS * (columna+1) + (RADIO * 2 * (columna+1)) - RADIO; 
     ficha_posY = POS_Y_INI_TABLERO + GAP_FICHAS * (fila+1) + (RADIO * 2 * (fila+1)) - RADIO;
-    console.log('coordenadas nueva posicion '+ficha_posX+':'+ficha_posY);
     fichaSeleccionada.setPosition(ficha_posX, ficha_posY);
     fichaSeleccionada.setDisponible(false);
     tablero.ocuparCasillero(fila, columna, turnoJ1);
@@ -317,7 +314,7 @@ function verificarGanadorDiagonalDescendente(ubicacion,valorBuscado){
         ubicacionActual = {fila:filaActual,columna:columnaActual};
         valorActual = tablero.getValor(ubicacionActual);
     }
-    while ((columnaActual >= 0) && (filaActual >= 0) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
+    while ((columnaActual < COLUMNAS) && (filaActual < FILAS) && (contador < cantFichasParaGanar) && (valorActual == valorBuscado)) {  
         posGanadora = {fila:filaActual,columna:columnaActual};
         fichasGanadoras.push(posGanadora);
         contador ++;
@@ -500,25 +497,18 @@ function onMouseUp(e){
         let posX = fichaSeleccionada.getPosX();
         let posY = fichaSeleccionada.getPosY();
         if(tablero.posicionValida(posX, posY)){
-            console.log('coordenadas a convertir --> ' + posX + ',' + posY)
             let ubicacion = tablero.obtenerCasillero(posX, posY);
-            console.log(ubicacion);
             if ((ubicacion.fila == -1) && (ubicacion.columna == -1)){
-                console.log('Devolver a por Inicial');
                 devolverAPosicionInicial();
             }
             else {
-                console.log('Soltar en la columna');
                 soltarFicha(ubicacion);
             }
         }
         else {
-            console.log('Devolver a por Inicial');
             devolverAPosicionInicial();
         }
         fichaSeleccionada = null;
         isMouseDown = false;
     }
 }
-
- 

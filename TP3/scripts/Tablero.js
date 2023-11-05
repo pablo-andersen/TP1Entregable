@@ -18,21 +18,15 @@ class Tablero extends Figura{
                 this.tablero[f][c] = 0;
             }
         }
-        console.log ('tablero inicializado');
-        for (let fila of this.tablero){
-            console.log(fila);
-        }
     }
 
     ocuparCasillero(fila, columna, turnoJ1){
-        console.log('valor casillero ->', this.tablero[fila][columna]);
         if(turnoJ1){
             this.tablero[fila][columna] = 1; 
         } 
         else {
             this.tablero[fila][columna] = 2;
         }
-        console.log('valor casillero ->', this.tablero[fila][columna]);
     }
 
     obtenerCasillero(posX,posY){
@@ -46,7 +40,6 @@ class Tablero extends Figura{
                     let f = 0;
                     while (f < this.FILAS){
                         contenido = this.tablero[f][colRes];
-                        console.log('iteracion ' + (f+1) + ': ' + contenido + '. Posicion['+f+']['+colRes+']');
                         if (contenido !== 0){
                             if (f == 0) {
                                 colRes = -1;
@@ -117,18 +110,13 @@ class Tablero extends Figura{
     posicionValida(posX, posY){
         if(posY <= this.posY-this.RADIO) {
             if((posX > this.posX) && (posX < this.posX+this.width)){
-                console.log('Posicion válida');
                 return true;                
             }
             else {
-                
-                console.log('Posicion no válida');
                 return false;
             }
         }
-        else {            
-            console.log('Posicion no válida');
+        else {
             return false;
         }
     }
-}
