@@ -18,8 +18,8 @@ let MARGEN_HORIZONTAL = 50;
 let MARGEN_VERTICAL = 100;
 let DISPERSION_HORIZONTAL = 100;
 let DISPERSION_VERTICAL = 335;
-let nombreJ1 = j1.value;
-let nombreJ2 = j2.value;
+let nombreJ1;
+let nombreJ2;
 let turnoJ1 = false;
 let hayGanador = false;
 let fichasJ1= [];
@@ -122,7 +122,8 @@ botonComenzar.addEventListener('click', (e)=>{
                     cantFichasParaGanar = 4;
             }
             //inicializamos las variables del juego
-
+            nombreJ1 = j1.value;
+            nombreJ2 = j2.value;
             FICHAS_INICIALES = Math.round(FILAS * COLUMNAS / 2);  
 
 
@@ -250,6 +251,18 @@ function soltarFicha(ubicacion){
     }
     else {
         console.log('terminarJuego();');
+        let jugadorGanador;
+        if (turnoJ1){
+            jugadorGanador = nombreJ1;
+        }
+        else {
+            jugadorGanador = nombreJ2;
+        }
+        resaltarFichasGanadoras(fichasGanadoras);
+        mostrarGanador(jugadorGanador, fichasGanadoras);
+        canvas.removeEventListener("mousedown", onMouseDown);
+        canvas.removeEventListener("mousemove", onMouseMove);
+        canvas.removeEventListener("mouseup", onMouseUp);
     }
 }
 
@@ -510,5 +523,45 @@ function onMouseUp(e){
         }
         fichaSeleccionada = null;
         isMouseDown = false;
+    }
+}
+
+function mostrarGanador(jugador, fichasGanadoras) {
+    
+    let mensajeWidth = 350;
+    let mensajeHeight = 60;
+    let mensajeX = (canvas.width - mensajeWidth) / 2;
+    let mensajeY = (canvasHeight-mensajeHeight) /2;
+    let mensaje = 'Ganó ' + jugador;
+    
+    // Dibujar el Letrero
+    context.fillStyle = "rgba(38,45,227,0.5)";
+    context.fillRect(mensajeX, mensajeY, mensajeWidth, mensajeHeight);
+    // Dibujar el texto del mensaje
+    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
+    context.fillStyle = "rgba(54,247,43,255)";
+    context.strokeStyle = "black";
+    context.lineWidth = 3;
+    context.textAlign = "center";
+    let x = canvas.width / 2;
+    let y = (canvasHeight+20) /2;
+    context.strokeText(mensaje, x, y);
+    context.fillText(mensaje, x, y);
+}
+
+function resaltarFichasGanadoras(fichasGanadoras){
+    for(let i = 0; i < fichasGanadoras.length ; i++){
+        let fila= fichasGanadoras[i].fila;
+        let columna = fichasGanadoras[i].columna;
+        ficha_posX = POS_X_INI_TABLERO + GAP_FICHAS * (columna+1) + (RADIO * 2 * (columna+1)) - RADIO; 
+        ficha_posY = POS_Y_INI_TABLERO + GAP_FICHAS * (fila+1) + (RADIO * 2 * (fila+1)) - RADIO; 
+        context.filter = "blur(5px)";
+        context.beginPath();
+        context.arc(ficha_posX, ficha_posY, RADIO-1,  0, 2 * Math.PI);
+        context.closePath();
+        context.lineWidth = 4;
+        context.strokeStyle = "rgba(54,247,43,255)";
+        context.stroke();
+        context.filter = "none";
     }
 }
