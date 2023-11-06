@@ -4,20 +4,18 @@ let preJuego = document.querySelector("#pre-juego");
 let j1 = document.querySelector("#j1");
 let j2 = document.querySelector("#j2");
 let canvas = document.querySelector('#juego-4-en-linea');
+let navTimer = document.querySelector('#barra-timer');
+let timer = document.querySelector('#timer');
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let context = canvas.getContext('2d');
 let fichaJ1;
 let fichaJ2;
 let modoJuego;
-
+let fondoCanvas;
 let minutosTimer;
 let segundosTimer;
 let intervalo;
-let timerWidth = 125;
-let timerHeigth = 50;
-let timerX = (canvasWidth - timerWidth) / 2;
-let timerY = canvasHeight - timerHeigth;
 let FICHAS_INICIALES;
 let RADIO = 23;
 let GAP_FICHAS = 6;
@@ -27,12 +25,12 @@ let DISPERSION_HORIZONTAL = 100;
 let DISPERSION_VERTICAL = 335;
 let nombreJ1;
 let nombreJ2;
-let turnoJ1 = false;
-let hayGanador = false;
+let turnoJ1;
+let hayGanador;
 let fichasJ1;
 let fichasJ2;
-var fichaSeleccionada = null;
-let isMouseDown = false;
+var fichaSeleccionada;
+let isMouseDown;
 let ANCHO_TABLERO;
 let ALTURA_TABLERO;
 let POS_X_INI_TABLERO;
@@ -44,9 +42,12 @@ let offsetY = 0;
 let cantFichasParaGanar;
 let fichasGanadoras = [];
 
-// canvas.addEventListener('mousemove',(e)=>{
-   
-// });
+let reiniciar = document.querySelector('#boton-reiniciar');
+reiniciar.addEventListener('click',(e)=>{
+    e.preventDefault();
+    clearInterval(intervalo);
+    iniciarJuego();
+});
 let fichas1 = document.querySelectorAll('input[name="f1"]');
 fichas1.forEach(ficha => {
     ficha.addEventListener('change', (e) =>{
@@ -94,12 +95,18 @@ botonComenzar.addEventListener('click', (e)=>{
         setTimeout(function(){
             //
             preJuego.classList.add("no-mostrar");
+            navTimer.classList.remove("no-mostrar");
 
             //Se asignan las imagenes de las fichas de cada equipo.
             imagenFicha1 = new Image();
             imagenFicha1.src = fichaJ1;
             imagenFicha2 = new Image();
             imagenFicha2.src = fichaJ2;
+            fondoCanvas = new Image();
+            fondoCanvas.src = 'img/fondoJuego.png';
+            fondoCanvas.onload = clearCanvas();
+         
+            
 
             //Se define el tamaño del tablero.
             switch (modoJuego) {
@@ -144,14 +151,37 @@ botonComenzar.addEventListener('click', (e)=>{
     }
 });
 
-canvas.addEventListener('mousedown', onMouseDown);
-canvas.addEventListener('mouseup',onMouseUp);
 
 
 function iniciarJuego(){
     //inicializa los parámetros del juego y del tablero.
+    canvas.addEventListener('mousedown', onMouseDown);
+    canvas.addEventListener('mouseup',onMouseUp);
+    context.lineWidth = 1;
+    turnoJ1 = false;
+    hayGanador = false;
+    fichaSeleccionada=null;
+    isMouseDown=false;
     minutosTimer = 3;
     segundosTimer = 0;
+    dibujarTimer();
+    intervalo = setInterval(()=>{
+        if (minutosTimer === 0 && segundosTimer === 0) {
+            canvas.removeEventListener("mousedown", onMouseDown);
+            canvas.removeEventListener("mousemove", onMouseMove);
+            canvas.removeEventListener("mouseup", onMouseUp);
+            clearInterval(intervalo);
+            mostrarMensaje('Tiempo finalizado!');
+        } 
+        else if (segundosTimer === 0) {
+            minutosTimer--;
+            segundosTimer = 59;
+        } 
+        else {
+            segundosTimer--;
+        }
+        dibujarTimer();
+    },1000);
     fichasJ1 = [];
     fichasJ2 = [];
     // instancia un tablero vacío.
@@ -188,17 +218,11 @@ function iniciarJuego(){
         fichasJ1[k].draw();
         fichasJ2[k].draw();
     }
-    dibujarTimer();
-    intervalo = setInterval(timerJuego, 1000);
     iniciarTurno();
 }
 
 function clearCanvas(){
-    let fill = "rgba(2,48,82,255)";
-    context.fillStyle = fill;
-    context.beginPath();
-    context.fillRect(0, 0, canvasWidth, canvasHeight);
-    context.stroke();
+    context.drawImage(fondoCanvas,0,0);
 }
 
 //instancio una ficha (circulo) y la agrego al arreglo
@@ -263,8 +287,6 @@ function soltarFicha(ubicacion){
     }
     else {
         console.log('terminarJuego();');
-        clearInterval(intervalo);
-        dibujarTimer();
         let jugadorGanador;
         if (turnoJ1){
             jugadorGanador = nombreJ1;
@@ -277,6 +299,7 @@ function soltarFicha(ubicacion){
         canvas.removeEventListener("mousedown", onMouseDown);
         canvas.removeEventListener("mousemove", onMouseMove);
         canvas.removeEventListener("mouseup", onMouseUp);
+        clearInterval(intervalo);
     }
 }
 
@@ -529,36 +552,14 @@ function resaltarFichasGanadoras(fichasGanadoras){
         context.filter = "none";
     }
 }
+
 function dibujarTimer(){
     let tiempoRestante = String(minutosTimer).padStart(2,'0') + ':' + String(segundosTimer).padStart(2,'0');
-    context.fillStyle = "rgba(242,75,235,1)";
-    context.fillRect(timerX, timerY, timerWidth, timerHeigth);
-    context.beginPath();
-    context.stroke();
-    context.font = "30px 'M PLUS Rounded 1c', sans-serif";
-    context.fillStyle = 'white';
-    context.textAlign = "center";
-    context.fillText(tiempoRestante, (timerX+(timerWidth/2)), (timerY+timerHeigth/1.4));
-}
-
-function timerJuego(){
-    dibujarTimer();
-    if (minutosTimer === 0 && segundosTimer === 0) {
-        clearInterval(intervalo);
-        mostrarMensaje('Tiempo finalizado!');
-      } else {
-        if (segundosTimer === 0) {
-          minutosTimer--;
-          segundosTimer = 59;
-        } else {
-          segundosTimer--;
-        }
-      }
+    timer.innerHTML = tiempoRestante;
 }
 
 //eventos 
 function onMouseDown(e){  
-    dibujarTimer();
     let arreglo;
     if(turnoJ1){
         arreglo = fichasJ1;
@@ -580,12 +581,10 @@ function onMouseMove(e){
         for (let ficha of fichasJ1.concat(fichasJ2)) {
             ficha.draw();
         }
-        dibujarTimer();
     }       
 }
 
 function onMouseUp(e){
-    dibujarTimer();
     if (isMouseDown){
         canvas.removeEventListener('mousemove',onMouseMove);
         let posX = fichaSeleccionada.getPosX();

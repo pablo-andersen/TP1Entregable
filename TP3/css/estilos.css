@@ -11,7 +11,7 @@
     --secundarioL1:#9A65FF;
     --secundario:#7844DC;
     --secundarioS1:#5831A2;
-    --secundarioS2:#472686;
+    --secundarioS2:#482687;
     --secundarioS3: #1f123a;
     --acentoL3:#F6C9F4;
     --acentoL2:#F6A2F3;
@@ -31,6 +31,7 @@
     --negro85op: rgba(14,7,29,0.85);
     --blanco75op: rgba(255,255,255,0.75);
     --secundario65op: rgba(120, 68, 220, .65);
+    --secundarioS250op: rgba(72, 38, 135, 0.5);
     --acento75op: rgba(242, 75, 235, 0.75);
     --acento35op: rgba(242, 75, 235, 0.35);
     --acento45op: rgba(242, 75, 235, 0.45);
@@ -806,6 +807,22 @@ footer.grid-footer {
         position: absolute;
         top: 240px;
         background-color: var(--secundario65op);
+    }
+    
+    .barra-juego{
+        position: absolute;
+        top: 770px;
+        background-color: var(--secundarioS250op);
+        width: 960px;
+        height: 51px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .barra-juego>.timer {
+        font-size: 30px;
     }
 
     .contenedor-juego>h1 {
