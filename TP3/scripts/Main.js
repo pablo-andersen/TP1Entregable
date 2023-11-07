@@ -219,7 +219,7 @@ function iniciarJuego(){
 }
 
 function clearCanvas(){
-    let fill = "rgba(2,48,82,255)";
+    let fill = "rgba(20,20,92,255)";
     context.fillStyle = fill;
     context.beginPath();
     context.fillRect(0, 0, canvasWidth, canvasHeight);

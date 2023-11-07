@@ -267,7 +267,7 @@ footer.grid-footer {
 .footer-fila-sup {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .columna-footer {
@@ -277,6 +277,8 @@ footer.grid-footer {
 
 .columna-footer h3 {
     display: block;
+    text-align: center;
+    font-size: 16px;
 }
 
 .footer-fila-inf {
@@ -284,12 +286,23 @@ footer.grid-footer {
 }
 
 .footer-fila-inf .columna-footer {
-    width: 100%;
+    width: 90%;
+    text-align: justify;
+    margin: auto;
+}
+.footer-fila-inf>.columna-footer>p{
+    margin: auto;
+}
+
+.footer-fila-inf>.columna-footer>p>span {
+    width: 90%;
+    margin: auto;
 }
 
 .grid-fila-footer {
     width: 100%;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 
@@ -444,7 +457,7 @@ footer.grid-footer {
     footer.grid-footer {
         margin-top: 80px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 40%;
+        grid-template-columns: 1fr 40%;
         grid-template-rows: 90% 10%;
         height: auto;
         background-color: var(--primarioS3);
@@ -1025,8 +1038,8 @@ footer.grid-footer {
         background-color: var(--primarioS3);
         border-radius: 20px;
         padding: 10px;
-        color-scheme: var(--blanco);
-        border: 2px solid var(--secundario)
+        color: var(--blanco75op);
+        border: 2px solid var(--secundario);
     }
 
     .boton-comentario{
