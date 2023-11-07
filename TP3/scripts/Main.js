@@ -102,9 +102,6 @@ botonComenzar.addEventListener('click', (e)=>{
             imagenFicha1.src = fichaJ1;
             imagenFicha2 = new Image();
             imagenFicha2.src = fichaJ2;
-            fondoCanvas = new Image();
-            fondoCanvas.src = 'img/fondoJuego.png';
-            fondoCanvas.onload = clearCanvas();
          
             
 
@@ -222,7 +219,11 @@ function iniciarJuego(){
 }
 
 function clearCanvas(){
-    context.drawImage(fondoCanvas,0,0);
+    let fill = "rgba(2,48,82,255)";
+    context.fillStyle = fill;
+    context.beginPath();
+    context.fillRect(0, 0, canvasWidth, canvasHeight);
+    context.stroke();
 }
 
 //instancio una ficha (circulo) y la agrego al arreglo
@@ -321,9 +322,6 @@ function comprobarGanador(ubicacion){
     }
     if (!hayGanador){
         verificarGanadorVertical(ubicacion,valorBuscado);
-    }
-    if (!hayGanador){
-        verificarGanadorHorizontal(ubicacion,valorBuscado);
     }
     if (!hayGanador){
         verificarGanadorHorizontal(ubicacion,valorBuscado);
