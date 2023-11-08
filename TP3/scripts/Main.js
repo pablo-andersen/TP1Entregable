@@ -22,11 +22,12 @@ let GAP_FICHAS = 6;
 let MARGEN_HORIZONTAL = 50;
 let MARGEN_VERTICAL = 100;
 let DISPERSION_HORIZONTAL = 100;
-let DISPERSION_VERTICAL = 335;
+let DISPERSION_VERTICAL = 320;
 let nombreJ1;
 let nombreJ2;
 let turnoJ1;
 let hayGanador;
+let hayEmpate;
 let fichasJ1;
 let fichasJ2;
 var fichaSeleccionada;
@@ -157,6 +158,7 @@ function iniciarJuego(){
     context.lineWidth = 1;
     turnoJ1 = false;
     hayGanador = false;
+    hayEmpate = false;
     fichaSeleccionada=null;
     isMouseDown=false;
     minutosTimer = 3;
@@ -235,6 +237,7 @@ function addFicha(posX, posY,imagenEquipo, arreglo) {
 
 function iniciarTurno(){
     turnoJ1 = !turnoJ1;
+    mostrarTurno();
 }
 
 function recorrerArreglo(arreglo, e){
@@ -263,6 +266,7 @@ function devolverAPosicionInicial(){
     fichaSeleccionada = null;
     clearCanvas();
     tablero.draw();
+    mostrarTurno();
     for (let ficha of fichasJ1.concat(fichasJ2)) {
         ficha.draw();
     }
@@ -283,8 +287,15 @@ function soltarFicha(ubicacion){
         ficha.draw();
     }
     comprobarGanador(ubicacion);
-    if(!hayGanador){
+    if(!hayGanador && !hayEmpate){
         iniciarTurno();
+    }
+    else if(hayEmpate){
+        console.log('terminarJuego();');
+        canvas.removeEventListener("mousedown", onMouseDown);
+        canvas.removeEventListener("mousemove", onMouseMove);
+        canvas.removeEventListener("mouseup", onMouseUp);
+        clearInterval(intervalo);
     }
     else {
         console.log('terminarJuego();');
@@ -332,6 +343,12 @@ function comprobarGanador(ubicacion){
     if (!hayGanador){
         verificarGanadorDiagonalDescendente(ubicacion,valorBuscado);
     }
+    verificarEmpate();
+    if (hayEmpate){
+        mostrarEmpate();
+    }
+    
+
     
 }
 
@@ -508,6 +525,65 @@ function verificarGanadorVertical(ubicacion,valorBuscado) {
     }
 }
 
+function verificarEmpate(){
+    let fichasDisponibles = false;
+    let pos = 0;
+    let todasLasFichas = fichasJ1.concat(fichasJ2);
+    while(pos < todasLasFichas.length && !fichasDisponibles) {
+        if (todasLasFichas[pos].getDisponible()){
+            fichasDisponibles = true;
+        }
+        pos++;
+    } 
+    if (!fichasDisponibles){
+        console.log('empate');
+        hayEmpate = true;
+    }
+}
+
+function informarTurno(mensaje){
+    let mensajeWidth = 200;
+    let mensajeHeight = 60;
+    let mensajeX;
+    let mensajeY = (canvasHeight - mensajeHeight*2.1);
+    context.filter = "blur(3px)";
+    if (turnoJ1){        
+        context.fillStyle = "rgba(242,74,234,1)";
+        mensajeX = (5);
+    }
+    else {
+        context.fillStyle = "rgba(1,63,111,1)";    
+        mensajeX = (canvasWidth-mensajeWidth-5);    
+    }
+    context.fillRect(mensajeX, mensajeY, mensajeWidth, mensajeHeight);
+    context.filter = "none";
+    let bannerX = mensajeX +5 + (mensajeWidth/2);
+    let bannerY = (canvasHeight-mensajeHeight*2.1)+40 ;
+    // Dibujar el texto del mensaje
+    context.font = "20px 'M PLUS Rounded 1c', sans-serif";
+    context.fillStyle = "rgba(231, 245, 220,1)";
+    context.strokeStyle = "black";
+    context.lineWidth = 3;
+    context.textAlign = "center";
+    context.strokeText(mensaje, bannerX, bannerY);
+    context.fillText(mensaje, bannerX, bannerY);
+    context.lineWidth = 1;
+}
+
+function mostrarTurno(){
+    let jugador; 
+    if(turnoJ1){
+        jugador = nombreJ1;
+    }
+    else {
+        jugador = nombreJ2;
+    }
+    let mensaje = 'Juega ' + jugador;
+
+    //dibujar el turno en pantalla
+    informarTurno(mensaje);
+}
+
 function mostrarMensaje(mensaje){
     let mensajeWidth = 350;
     let mensajeHeight = 60;
@@ -525,6 +601,13 @@ function mostrarMensaje(mensaje){
     context.textAlign = "center";
     context.strokeText(mensaje, bannerX, bannerY);
     context.fillText(mensaje, bannerX, bannerY);
+}
+
+function mostrarEmpate(){
+    let mensaje = 'Empate! Reiniciar para revancha';
+    
+    // Dibujar el Letrero
+    mostrarMensaje(mensaje);
 }
 
 function mostrarGanador(jugador) {    
@@ -576,6 +659,7 @@ function onMouseMove(e){
         fichaSeleccionada.setPosition(nuevaPosX,nuevaPosY);
         clearCanvas();
         tablero.draw();
+        mostrarTurno();
         for (let ficha of fichasJ1.concat(fichasJ2)) {
             ficha.draw();
         }

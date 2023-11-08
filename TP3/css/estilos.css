@@ -824,10 +824,10 @@ footer.grid-footer {
     
     .barra-juego{
         position: absolute;
-        top: 770px;
+        top: 761px;
         background-color: var(--secundarioS250op);
         width: 960px;
-        height: 51px;
+        height: 60px;
         margin: auto;
         display: flex;
         justify-content: space-around;
