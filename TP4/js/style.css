@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.elastic{
+    display: block;
+    width: 100%;
+}
+
+.fixed{
+    width: 1080px;
+    margin: auto;
+}
+
+.sticky {
+    position: sticky;
+    top:0px;
+}
+
+.relative{
+    position: relative;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #5499F9;
+    z-index: 998;
+}
+
+.menuHamburguesa{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px 0px 0px 8%;
+    padding: 0px;
+    border: 0px;
+    z-index: 990;
+
+}
+
+.barramenu{
+    height: 4px;
+    width: 34px;
+    background-color: #FFE901;
+    border: 4px solid #2981FF;
+    border-radius: 10px;
+    
+}
+
+.btnComprar{    
+    width: 200px;
+    height: 50px;
+    color: #02187E;
+    background: #FFE901;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+    border-radius: 111px;
+    border: 8px solid #2982FF;
+    flex-shrink: 0;
+    margin: 0px 8% 0px 0px;
+}
+
+.sombraAzul{
+    box-shadow: 4px 5px 0px 0px  #02187E;
+}
+
+.logoSpidey{
+    width: 46%;
+    left: 27%;
+    z-index: 999;
+    background-color: transparent;
+}
+
+.logoSpidey img{
+    width: 100%;
+}
+
+.fondoCieloNubes {
+    position: absolute;
+    top: -320px;
+    width: 100%;
+    z-index: 900;
+}
+
+.fondoCieloNubes img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.fondoEdificios{
+    position: absolute;
+    top: -270px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    z-index: 901;
+}
+
+.tresSpideys{
+    display: flex;    
+    justify-content: center;
+    z-index: 902;
+    position: absolute;
+}
+
+.mainSpideyBlanco{
+    position: relative;
+    top:-10px;
+    left: 100px;
+}
+
+.mainSpideyRojo{
+    position: relative;
+    left: 70px;
+    top:20px;
+}
+
+.mainSpideyNegro{
+    position: relative;
+    right: 45px;
+    top: -70px;
+}
+
+.telaIzq{
+    z-index: 903;
+    position: relative;
+    left: -155px;
+    top: -8px;
+}
+
+.telaDer {
+    z-index: 903;
+    position: relative;
+    right: -1070px;
+    top: -690px;
+}
