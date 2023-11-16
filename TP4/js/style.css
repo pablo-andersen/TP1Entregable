@@ -6,6 +6,14 @@
     font-family: 'Lato', sans-serif;
 }
 
+h2 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 20px;
+}
+
 .elastic{
     display: block;
     width: 100%;
@@ -43,7 +51,6 @@ header{
     padding: 0px;
     border: 0px;
     z-index: 990;
-
 }
 
 .barramenu{
@@ -89,7 +96,7 @@ header{
 
 .fondoCieloNubes {
     position: absolute;
-    top: -320px;
+    top: -375px;
     width: 100%;
     z-index: 900;
 }
@@ -145,4 +152,53 @@ header{
     position: relative;
     right: -1070px;
     top: -690px;
+}
+
+.amigos{
+    background-color: #8F6AA6;
+    color: #FFFFFF;
+}
+
+.duende {
+    position: absolute;
+    top:-85px;
+    right:-100px;
+}
+
+.cards{
+    margin-top: 85px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-bottom: 125px;
+}
+
+.flexcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flexcard img{
+    margin-bottom: 25px;
+}
+
+.bannerGhost{
+    position: relative;
+}
+
+.demo01{
+    position: absolute;
+    top:-160px;
+}
+
+.demo02{
+    position: absolute;
+    top:-40px;
+}
+
+.demo03{
+    position: absolute;
+    top:150px;
+    left: 30px;
 }
