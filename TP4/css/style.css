@@ -8,6 +8,7 @@
 
 body{
     background-color: #000;
+    width: 1280px;
 }
 
 .container1280{
@@ -99,13 +100,19 @@ header{
 
 .logoSpidey{
     width: 46%;
-    left: 27%;
+    margin: auto;
     z-index: 999;
     background-color: transparent;
+    transition: width 0.5s;
 }
 
 .logoSpidey img{
+    display: block;
     width: 100%;
+}
+
+.logoSpidey.small {
+    width: 15%;
 }
 
 .fondoCieloNubes {
@@ -163,6 +170,7 @@ header{
 }
 
 .telaDer {
+    display: block;
     z-index: 903;
     position: relative;
     right: -1070px;
@@ -343,7 +351,7 @@ header{
 
 .newsletter{
     top: 600px;
- background-color: #234499;
+    background-color: #234499;
 
 }
 .fondoNewsLetter{
@@ -355,6 +363,11 @@ header{
     z-index: 700;
 }
 
+.fondoCiudadNewsLetter{
+    position: absolute;
+    top:576px;
+}
+
 .contenidoNewsLetter{
     padding-top: 100px;
     position: absolute;
@@ -362,7 +375,100 @@ header{
     left:100px;
     color: #000;
     z-index: 701;
-}
-.contenidoNewsLetter h2{
     text-align: center;
 }
+
+.contenidoNewsLetter>p{
+    text-align: left;
+    margin-left: 200px;
+}
+
+.contenidoNewsLetter>p>a{
+    color: #000;
+    text-decoration: underline;
+}
+.inputForm{   
+    display: flex; 
+    width: 780px;
+    height:100px;
+    margin: 45px auto;
+}
+
+.inputForm input::placeholder {
+    padding-left: 40px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    letter-spacing: 2.2px;
+}
+
+.inputLeft{
+    width: 562px;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #2982ff;
+    border-bottom: 9px solid #2982ff;
+    border-left: 9px solid #2982ff;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.inputRight{
+    width: 218px;
+    border-radius: 0px 50px 50px 0px;
+    border: 9px solid #2982ff;
+    background: #ffe901;
+    color: #02187e;
+    font-family: 'Lato';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    letter-spacing: 2.2px; 
+    -webkit-text-stroke: 2px;
+}
+
+.rating {
+    width: 231px;
+    height: 145px;
+    margin: 20px 0px 0px 200px;
+}
+
+.rating img{
+    width: 100%;
+}
+
+.separadorFooter {
+    background: #242424;
+    height: 80px;
+    top:596px
+}
+
+.footer {
+    height: 598px;
+    top:596px;
+    background: #5E5E5D;
+}
+
+.footer>.fixed>p{
+    color: #FFF;
+    font-size: 20px;
+    letter-spacing: 2.2px;
+    font-style:normal;
+    font-weight: 400;
+    line-height: 94.5%;
+}
+
+.footer>.fixed>p:first-child {
+    padding-top: 42px;
+}
+
+.footer>.fixed>p:nth-child(2) {
+    margin-top: 35px;
+    text-decoration: underline;
+}
+
+.socialMedia{
+    margin-top: 38px;
+}
+

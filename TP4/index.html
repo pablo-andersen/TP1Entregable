@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="js/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <header class="sticky">
+        <div class="menuHamburguesa sticky">
+            <div class="barramenu sombraAzul"></div>
+            <div class="barramenu sombraAzul"></div>
+            <div class="barramenu sombraAzul"></div>
+        </div>
+        <div class="sticky btnComprar"><button class="btn btnComprar sombraAzul">COMPRAR</button>
+    </header>
     <div class="container1280">
-        <header class="sticky">
-            <div class="menuHamburguesa sticky">
-                <div class="barramenu sombraAzul"></div>
-                <div class="barramenu sombraAzul"></div>
-                <div class="barramenu sombraAzul"></div>
-            </div>
-            <div class="sticky"><button class="btn btnComprar sombraAzul">COMPRAR</button>
-        </header>
         <div class="logoSpidey sticky" id="logoSpidey">
             <img src="img/logoSpidey.png">
         </div>
@@ -23,7 +23,7 @@
             <div class="fondoCieloNubes">
                 <img src="img/fondoCieloNubes.png">
             </div>
-            <div class="fondoEdificios">
+            <div class="fixed fondoEdificios">
                 <div><img src="img/edifIzquierda.png" alt=""></div>
                 <div><img src="img/edifFondo.png" alt=""></div>
                 <div><img src="img/edifDerecha.png" alt=""></div>
@@ -131,19 +131,31 @@
         </div>
         <div class="elastic relative newsletter">            
             <div class="fondoNewsLetter">
-                <div><img src="img/fondoCieloCiudad.png" alt="" srcset=""></div>
+                <div class="fondoNewsLetter"><img src="img/fondoCieloCiudad.png"></div>
+                <div class="fondoCiudadNewsLetter"><img src="img/fondoCiudad.png"></div>
                 <div class="fixed contenidoNewsLetter">                
                     <h2>Lo último de SPIDEY Y SUS<br>AMIGOS en tu buzón de<br>correo electrónico</h2>
-                    <input type="text">
-                    <input type="button" value="SUSCRIBIRSE">
+                    <div class="inputForm">
+                        <input class="inputLeft sombraAzul" type="text" placeholder="Ingresa aquí tu correo">
+                        <button class="inputRight sombraAzul">SUSCRIBIRSE</button>
+                    </div>
                     <p>Al inscribirse en nuestra lista de correo, nos autoriza a ponernos<br>en contacto con usted para enviarle ofertas y actualizaciones de<br>marketing por correo electrónico, y también acepta nuestra<br><a href="#">Política de privacidad</a> y las <a href="#">Condiciones del servicio.</a></p>
-                    <img src="img/juegoRating.png" alt="">
+                    <div class="rating"><img src="img/juegoRating.png" alt=""></div>
                 </div>
             </div>
         </div>
-        <footer class="fixed">
-    
+        <div class="elastic relative separadorFooter">
+            <div class="fixed"><img src="img/logosConsolas.png" alt=""></div>
+        </div>    
+        <footer class="elastic relative footer">
+            <div class="fixed">
+                <p>©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and<br>Trademark Office. SEGA, the SEGA logo and SONIC SUPERSTARS are either<br>registered trademarks or trademarks of SEGA CORPORATION or its<br>affiliates. All other trademarks, logos and copyrights are property of their<br>respective owners.©2023 The LEGO Group. LEGO, the LEGO logo, the<br>Minifigure, and the Brick and Knob configurations are trademarks and/or<br>copyrights of the LEGO Group. All other marks and trademarks are the<br>property of their respective owners. All rights reserved."PS", "PS5" and<br>"PS4" are registered trademarks or trademarks of Sony Interactive<br>Entertainment Inc.Microsoft, the Xbox Sphere mark, the Series X logo, Xbox<br>One, and Xbox Series X are trademarks of the Microsoft group of<br>companies.Nintendo Switch is a trademark of NintendoEPIC GAMES and<br>the EPIC STORE LOGO are trademarks or registered trademarks of EPIC<br>GAMES INC.©2023 Valve Corporation. Steam and the Steam logo are<br>trademarks and/or registered trademarks of Valve Corporation in the U.S.<br>and/or other countries.The ESRB rating icons are registered trademarks of<br>the Entertainment Software Association.</p>
+                <p>COOKIE POLICY PRIVACY POLICY</p>
+                <div class="socialMedia"><img src="img/SocialMedia.png" alt=""></div>
+            </div>
+            
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
