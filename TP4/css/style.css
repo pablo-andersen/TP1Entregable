@@ -99,11 +99,11 @@ header{
 }
 
 .logoSpidey{
-    width: 46%;
+    width: 44%;
     margin: auto;
     z-index: 999;
     background-color: transparent;
-    transition: width 0.5s;
+    transition: width 0.4s;
 }
 
 .logoSpidey img{
@@ -112,7 +112,11 @@ header{
 }
 
 .logoSpidey.small {
-    width: 15%;
+    width: 14%;
+}
+
+.mainLogo{
+    height: 370px;
 }
 
 .fondoCieloNubes {
@@ -137,35 +141,47 @@ header{
     z-index: 901;
 }
 
+.edificio01{
+    width: 30%;
+}
+
+.edificio02{
+    width: 40%;
+}
+
+.edificio03{
+    width: 30%;
+}
+
 .tresSpideys{
     display: flex;    
     justify-content: center;
-    z-index: 902;
+    z-index: 903;
     position: absolute;
 }
 
 .mainSpideyBlanco{
     position: relative;
-    top:-10px;
-    left: 100px;
+    top:-25px;
+    left: 103px;
 }
 
 .mainSpideyRojo{
     position: relative;
-    left: 70px;
+    left: 25px;
     top:20px;
 }
 
 .mainSpideyNegro{
     position: relative;
-    right: 45px;
+    right: 125px;
     top: -70px;
 }
 
 .telaIzq{
     z-index: 903;
     position: relative;
-    left: -155px;
+    left: -200px;
     top: -8px;
 }
 
@@ -173,23 +189,58 @@ header{
     display: block;
     z-index: 903;
     position: relative;
-    right: -1070px;
+    right: -988px;
     top: -690px;
+}
+
+.separador01 {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: 200px;
+    background: #8F6AA6;
+    z-index: 902;
+    transform: skewY(-3deg);
+    transform-origin: top left;
 }
 
 .amigos{
     background-color: #8F6AA6;
+    top:10px;
     color: #FFFFFF;
+    z-index: 902;
+}
+
+.amigos h2{
+    z-index: 905;
+}
+
+.imgAmigos{
+    position: absolute;
+    z-index: 906;
 }
 
 .duende {
     position: absolute;
     top:-85px;
-    right:-100px;
+    right:0px;
+    z-index: 906;
+}
+
+
+.separador02 {
+    position: relative;
+    top: -120px;
+    width: 100%;
+    height: 465px;
+    background: #8f6aa6;
+    z-index: 901;
+    transform: skewY(7deg);
+    transform-origin: top right;
 }
 
 .cards{
-    margin-top: 85px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -208,6 +259,7 @@ header{
 
 .bannerGhost{
     position: relative;
+    z-index: 801;
 }
 
 .bannerGhost img{
@@ -235,7 +287,8 @@ header{
 }
 
 .vengadores{
-    padding-top: 130px;
+    padding-top: 250px;
+    top: -100px;
     background-color: #000;
     color: #FFF;
     z-index: 800;
@@ -316,12 +369,34 @@ header{
     margin-bottom: 20px;
 }
 
+.separador03{
+    position: relative;
+    top: 800px;
+    width: 100%;
+    height: 200px;
+    background: #000000;
+    z-index: 0;
+    transform: skewY(5deg);
+    transform-origin: top right;
+  }
+
 .frase{
     top:600px;
     background-color: #000;
     color: #FFF;
+    z-index: 905;
 }
 
+.separador04{
+    position: relative;
+    top: 515px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #000000;
+    transform: skewY(-5deg);
+    transform-origin: top left;
+}
 .frase h2 {
     font-weight: normal;
     padding: 50px 0px;
