@@ -25,6 +25,68 @@ p {
     font-size: 20px;
 }
 
+.loaderContainer{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    z-index: 999;
+    animation-name: cambioColor;
+    animation-duration: 6s;
+}
+
+.loader{
+    width: 180px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.telarania{
+    position: absolute;
+    left: 300px;
+    z-index: 999;
+}
+
+.arania{
+    position: absolute;
+    top: -200px;
+    left: 500px;
+    z-index: 1000;
+}
+
+.porcentaje{
+    position: absolute;
+    left: 475px;
+    top: 400px;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing:9px;
+    -webkit-text-stroke: 1px;
+}
+
+.lineaBlanca{ 
+    position: absolute;
+    left: 610px;
+    top: -395px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 330px;
+    background-color: #FFFFFF;
+}
+
+.noMostrar{
+    display: none;
+}
 .elastic{
     display: block;
     width: 100%;
@@ -101,7 +163,7 @@ header{
 .logoSpidey{
     width: 44%;
     margin: auto;
-    z-index: 999;
+    z-index: 998;
     background-color: transparent;
     transition: width 0.4s;
 }
@@ -251,6 +313,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    translate: 0 70vh;
 }
 
 .flexcard img{
@@ -547,3 +610,32 @@ header{
     margin-top: 38px;
 }
 
+.showUp{
+    animation: showUp ease .8s forwards ;
+}
+
+
+@keyframes cambioColor{
+    from {background-color: #FF0000;}
+    to {background-color: #5499F9;}
+}
+
+@keyframes showUp{
+    0% {
+        opacity:0;
+        translate:0 70vh;
+    }
+    25% {
+        opacity: 0.45;
+    }
+    50%{ 
+        opacity: 0.75;
+    }
+    75% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+        translate:0 0vh;
+    }
+}
