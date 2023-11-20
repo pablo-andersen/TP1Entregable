@@ -9,6 +9,7 @@
 body{
     background-color: #000;
     width: 1280px;
+    margin: auto;
 }
 
 .container1280{
@@ -612,6 +613,11 @@ header{
 
 .showUp{
     animation: showUp ease .8s forwards ;
+}
+
+.stickyCard{
+    position: sticky;
+    top:100px;
 }
 
 
