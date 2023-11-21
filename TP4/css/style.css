@@ -16,6 +16,9 @@ body{
     width: 1280px;
     margin: auto;
     background-color: #FFF;
+    overflow: hidden;
+    position: relative;
+    top: -287px;
 }
 
 h2 {
@@ -88,6 +91,7 @@ p {
 .noMostrar{
     display: none;
 }
+
 .elastic{
     display: block;
     width: 100%;
@@ -109,6 +113,7 @@ p {
 
 header{
     width: 100%;
+    height: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -179,12 +184,12 @@ header{
 }
 
 .mainLogo{
-    height: 370px;
+    height: 630px;
 }
 
 .fondoCieloNubes {
     position: absolute;
-    top: -375px;
+    top: -150px;
     width: 100%;
     z-index: 900;
 }
@@ -197,7 +202,7 @@ header{
 .fondoEdificios{
     width: 100%;
     position: absolute;
-    top: -270px;
+    top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -220,40 +225,40 @@ header{
     display: flex;    
     justify-content: center;
     z-index: 903;
-    position: absolute;
+    position: relative;
 }
 
 .mainSpideyBlanco{
-    position: relative;
-    top:-25px;
+    position: absolute;
+    top:550px;
     left: 103px;
 }
 
 .mainSpideyRojo{
-    position: relative;
-    left: 25px;
-    top:20px;
+    position: absolute;
+    top:570px;
+    left: 435px;
 }
 
 .mainSpideyNegro{
-    position: relative;
+    position: absolute;
+    top: 500px;
     right: 125px;
-    top: -70px;
 }
 
 .telaIzq{
     z-index: 903;
     position: relative;
-    left: -200px;
-    top: -8px;
+    left: -155px;
+    top: 543px;
 }
 
 .telaDer {
     display: block;
     z-index: 903;
     position: relative;
-    right: -988px;
-    top: -690px;
+    left: 1045px;
+    top: -122px;
 }
 
 .separador01 {
@@ -289,7 +294,6 @@ header{
     right:0px;
     z-index: 906;
 }
-
 
 .separador02 {
     position: relative;
@@ -403,11 +407,51 @@ header{
     top: 580px;
 }
 
-.stickyCard{
+.masAmigos h2{
+    width: 100%;
+}
+
+.masAmigosLayout{
+    display: flex;
+    justify-content: space-between;
+}
+
+.colSticky{
+    width: 550px;
+}
+
+.colTexto{
+    width: 467px;
+}
+
+.imgSticky{
+    padding: 50px 0;
+    position: fixed;
+    top:150px;
+    width: 550px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.showImgSticky{
+    animation: stickyCard 2s ease-in-out forwards;
+}
+
+.imgSticky img{
+    width: 100%;
+}
+
+.stickyText{
+    padding: 100px 0;
+}
+
+/* .stickyCard{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 100px 0px;;
+    padding: 100px 0px;
+    position: sticky;
+    top:100px;
 }
 
 .imgSticky{
@@ -431,7 +475,7 @@ header{
     font-size: 40px;
     font-weight:normal;
     margin-bottom: 20px;
-}
+} */
 
 .separador03{
     position: relative;
@@ -612,18 +656,21 @@ header{
 }
 
 .showUp{
-    animation: showUp ease .8s forwards ;
+    animation: showUp ease .8s forwards;
 }
-
-.stickyCard{
-    position: sticky;
-    top:100px;
-}
-
 
 @keyframes cambioColor{
     from {background-color: #FF0000;}
     to {background-color: #5499F9;}
+}
+
+@keyframes stickyCard{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
 }
 
 @keyframes showUp{

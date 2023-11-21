@@ -23,28 +23,28 @@
         </div>
         <div class="sticky btnComprar"><button class="btn btnComprar sombraAzul">COMPRAR</button>
     </header>
+    <div class="logoSpidey sticky" id="logoSpidey">
+        <img src="img/logoSpidey.png">
+    </div>
     <div class="container1280">
-        <div class="logoSpidey sticky" id="logoSpidey">
-            <img src="img/logoSpidey.png">
-        </div>
         <div class="elastic relative mainLogo">
-            <div class="fondoCieloNubes">
+            <div class="fondoCieloNubes" id="fondoCieloNubes" data-speed="10">
                 <img src="img/fondoCieloNubes.png">
             </div>
             <div class="elastic relative">
                 <div class="fondoEdificios">
-                    <div class="edificio01"><img src="img/edifIzquierda.png" alt=""></div>
-                    <div class="edificio02"><img src="img/edifFondo.png" alt=""></div>
-                    <div class="edificio03"><img src="img/edifDerecha.png" alt=""></div>
+                    <div class="edificio01" id="edificio01" data-speed="7"><img src="img/edifIzquierda.png" alt=""></div>
+                    <div class="edificio02" id="edificio02" data-speed="10"><img src="img/edifFondo.png" alt=""></div>
+                    <div class="edificio03" id="edificio03" data-speed="7"><img src="img/edifDerecha.png" alt=""></div>
                 </div>
             </div>
             <div class="tresSpideys">
-                <div class="mainSpideyBlanco"><img src="img/spideyBlanco.png" alt=""></div>
-                <div class="mainSpideyRojo"><img src="img/spideyRojo.png" alt=""></div>
-                <div class="mainSpideyNegro"><img src="img/spideyNegro.png" alt=""></div>
+                <div class="mainSpideyBlanco" id="mainSpideyBlanco" data-speed="20"><img src="img/spideyBlanco.png" alt=""></div>
+                <div class="mainSpideyRojo" id="mainSpideyRojo" data-speed="20"><img src="img/spideyRojo.png" alt=""></div>
+                <div class="mainSpideyNegro" id="mainSpideyNegro" data-speed="20"><img src="img/spideyNegro.png" alt=""></div>
             </div>
-            <div class="telaIzq"><img src="img/telaIzquierda.png" alt=""></div>
-            <div class="telaDer"><img src="img/telaDerecha.png" alt=""></div>
+            <div class="telaIzq" id="telaIzq" data-speed="20"><img src="img/telaIzquierda.png" alt=""></div>
+            <div class="telaDer" id="telaDer" data-speed="20"><img src="img/telaDerecha.png" alt=""></div>
         </div>
         <div class="separador01"></div>
         <div class="elastic relative amigos">
@@ -52,7 +52,7 @@
                 <h2>Conoce a Spidey y sus<br>sorprendentes amigos</h2>
                 <p>Spidey, nuestro lanzador de telarañas favorito se une a Ghost-<br>Spider (Gwen Stacey) y Miles Morales para formar el equipo de<br>Spidey, con la ayuda del cómico pero leal robot de Spidey, TRACE-E.<br>Si Spidey se encuentra en una situación difícil donde necesita aún<br>más poder de superhéroe, tengan la seguridad de que un amigo de<br>los Vengadores correrá para ayudar.</p>
                 <div class="imgAmigos"><img src="img/spideyAmigos01.png" alt=""></div>
-                <div class="duende"><img src="img/duendeCalabaza.png" alt=""></div>
+                <div class="duende" id="duende"><img src="img/duendeCalabaza.png" alt=""></div>
             </div>
         </div>
         <div class="separador02"></div>
@@ -96,36 +96,34 @@
         </div>
         <div class="elastic relative">
             <div class="fixed masAmigos">
-                <h2>Mas amigos, mas diversión!</h3>
-                <article class="stickyCard">
-                    <div class="imgSticky"><img src="img/stickyCard01.png" alt=""></div>
-                    <div class="stickyText">
-                        <h3>Mas de 100 misiones para que juegues sin parar!</h3>
-                        <p>Tus padres, contentos. Explora el emocionante mundo<br>de Spider-Man con más de 100 misiones que te<br>mantendrán en constante acción y adrenalina.</p>
-                        <p>Enfréntate a desafíos únicos, desentraña misterios, y<br>ayuda a Spider-Man a mantener la paz en la ciudad<br>mientras te sumerges en la piel del héroe arácnido.<br>¿Tienes lo que se necesita para superar todas las<br>misiones y convertirte en el auténtico Spider-Man?</p>
+                <div class="titulo"><h2>Mas amigos, mas diversión!</h2></div>
+                <div class="masAmigosLayout">
+                    <div class="colSticky">
+                        <div class="imgSticky" id="imgSticky01"><img src="img/stickyCard01.png" alt=""></div>
+                        <div class="imgSticky" id="imgSticky02"><img src="img/stickyCard02.png" alt=""></div>
+                        <div class="imgSticky" id="imgSticky03"><img src="img/stickyCard03.png" alt=""></div>
+                        <div class="imgSticky" id="imgSticky04"><img src="img/stickyCard04.png" alt=""></div>
                     </div>
-                </article>   
-                <article class="stickyCard">
-                    <div class="imgSticky"><img src="img/stickyCard02.png" alt=""></div>
-                    <div class="stickyText">
-                        <h3>Escenas deslumbrantes que te sorprenderán</h3>
-                        <p>Sumérgete en un universo de maravillas visuales con<br>'Spider-Man: [nombre del juego]'. Nuestro juego te<br>llevará a través de escenas deslumbrantes que te<br>dejarán sin aliento. Desde los rascacielos de Nueva<br>York hasta los intrincados detalles de la vida de Peter<br>Parker, cada rincón de este mundo te sorprenderá.<br>Prepárate para una experiencia única que desafiará<br>tus expectativas y te transportará a un asombroso<br>viaje con el Hombre Araña.</p>
+                    <div class="colTexto">
+                        <div class="stickyText">
+                            <h3>Mas de 100 misiones para que juegues sin parar!</h3>
+                            <p>Tus padres, contentos. Explora el emocionante mundo<br>de Spider-Man con más de 100 misiones que te<br>mantendrán en constante acción y adrenalina.</p>
+                            <p>Enfréntate a desafíos únicos, desentraña misterios, y<br>ayuda a Spider-Man a mantener la paz en la ciudad<br>mientras te sumerges en la piel del héroe arácnido.<br>¿Tienes lo que se necesita para superar todas las<br>misiones y convertirte en el auténtico Spider-Man?</p>
+                        </div>
+                        <div class="stickyText">
+                            <h3>Escenas deslumbrantes que te sorprenderán</h3>
+                            <p>Sumérgete en un universo de maravillas visuales con<br>'Spider-Man: [nombre del juego]'. Nuestro juego te<br>llevará a través de escenas deslumbrantes que te<br>dejarán sin aliento. Desde los rascacielos de Nueva<br>York hasta los intrincados detalles de la vida de Peter<br>Parker, cada rincón de este mundo te sorprenderá.<br>Prepárate para una experiencia única que desafiará<br>tus expectativas y te transportará a un asombroso<br>viaje con el Hombre Araña.</p>
+                        </div>
+                        <div class="stickyText">
+                            <h3>Cada misión te dará puntos que no sirven para nada!</h3>
+                            <p>Cada misión es una oportunidad para vivir la<br>emocionante vida del Hombre Araña, y aunque los<br>puntos que ganarás no tengan un propósito<br>específico, la verdadera recompensa está en la<br>diversión y la inmersión que experimentarás en cada<br>desafío. No necesitas acumular puntos para sentirte<br>como un auténtico superhéroe, ya que la adrenalina<br>de salvar la ciudad y la emoción de las acrobacias en el<br>aire son más que suficientes. ¡Así que prepárate para<br>sumergirte en la acción y la aventura, sin preocuparte por los puntos, y vive la experiencia definitiva de<br>Spider-Man!</p>
+                        </div>
+                        <div class="stickyText">
+                            <h3>Derrota a los villanos y diviértete</h3>
+                            <p>la diversión está asegurada mientras te enfrentas a<br>los infames villanos de la ciudad de Nueva York.<br>Enfréntate a desafíos épicos, combate a tus enemigos<br>más temibles y disfruta de una experiencia llena de<br>acción y emoción. Cada encuentro con los villanos te<br>sumergirá en una batalla trepidante y te llevará más<br>cerca de convertirte en el auténtico Hombre Araña.<br>Así que, ¿estás listo para derrotar a los villanos y<br>sumergirte en la aventura definitiva de Spider-Man?"</p>
+                        </div>             
                     </div>
-                </article>
-                <article class="stickyCard">
-                    <div class="imgSticky"><img src="img/stickyCard03.png" alt=""></div>
-                    <div class="stickyText">
-                        <h3>Cada misión te dará puntos que no sirven para nada!</h3>
-                        <p>Cada misión es una oportunidad para vivir la<br>emocionante vida del Hombre Araña, y aunque los<br>puntos que ganarás no tengan un propósito<br>específico, la verdadera recompensa está en la<br>diversión y la inmersión que experimentarás en cada<br>desafío. No necesitas acumular puntos para sentirte<br>como un auténtico superhéroe, ya que la adrenalina<br>de salvar la ciudad y la emoción de las acrobacias en el<br>aire son más que suficientes. ¡Así que prepárate para<br>sumergirte en la acción y la aventura, sin preocuparte por los puntos, y vive la experiencia definitiva de<br>Spider-Man!</p>
-                    </div>
-                </article>
-                <article class="stickyCard">
-                    <div class="imgSticky"><img src="img/stickyCard04.png" alt=""></div>
-                    <div class="stickyText">
-                        <h3>Derrota a los villanos y diviértete</h3>
-                        <p>la diversión está asegurada mientras te enfrentas a<br>los infames villanos de la ciudad de Nueva York.<br>Enfréntate a desafíos épicos, combate a tus enemigos<br>más temibles y disfruta de una experiencia llena de<br>acción y emoción. Cada encuentro con los villanos te<br>sumergirá en una batalla trepidante y te llevará más<br>cerca de convertirte en el auténtico Hombre Araña.<br>Así que, ¿estás listo para derrotar a los villanos y<br>sumergirte en la aventura definitiva de Spider-Man?"</p>
-                    </div>
-                </article>                
+                </div>
             </div>
         </div>
         <div class="separador03"></div>
