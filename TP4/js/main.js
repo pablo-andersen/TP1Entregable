@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function cargarSimulada() {
         if (avance < 100) {
             telarania.style.opacity = avance/100;
-            avance += 10;
+            avance += 100;
             posicion+= (360/100);     
             posicionLineaBlanca += (360/100);
             arania.style.top = posicion + "px";
@@ -50,6 +50,9 @@ let imgSticky01 =  document.querySelector("#imgSticky01");
 let imgSticky02 =  document.querySelector("#imgSticky02");
 let imgSticky03 =  document.querySelector("#imgSticky03");
 let imgSticky04 =  document.querySelector("#imgSticky04");
+let demo01 = document.querySelector("#demo01");
+let demo02 = document.querySelector("#demo02");
+let demo03 = document.querySelector("#demo03");
 
 document.addEventListener("scroll", (e)=>{
     
@@ -153,4 +156,25 @@ window.addEventListener("scroll", (e)=>{
         }
     }
     scrollPos = currentScrollPos;
+
+    if (top > 1525 && top <= 2774){
+        let pos = demo01.getBoundingClientRect(); 
+        if (pos.top < window.innerHeight && pos.bottom > 0) {
+          demo01.style.transform = 'translateY('+
+            (window.scrollY - pos.top) * 0.02
+          +'px)';
+        }
+        pos = demo02.getBoundingClientRect(); 
+        if (pos.top < window.innerHeight && pos.bottom > 0) {
+          demo02.style.transform = 'translateY('+
+            (window.scrollY - pos.top) * 0.026
+          +'px)';
+        }
+        pos = demo03.getBoundingClientRect(); 
+        if (pos.top < window.innerHeight && pos.bottom > 0) {
+          demo03.style.transform = 'translateY('+
+            (window.scrollY - pos.top) * 0.033
+          +'px)';
+        }
+    }
 });
