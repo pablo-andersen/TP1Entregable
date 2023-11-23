@@ -55,7 +55,8 @@ p {
 
 .telarania{
     position: absolute;
-    left: 300px;
+    left: 100px;
+    top:0px;
     z-index: 999;
 }
 
@@ -238,7 +239,7 @@ header{
 .mainSpideyRojo{
     position: absolute;
     top:570px;
-    left: 435px;
+    left: 420px;
 }
 
 .mainSpideyNegro{
@@ -250,7 +251,7 @@ header{
 .telaIzq{
     z-index: 903;
     position: absolute;
-    left: -160px;
+    left: -175px;
     top: 345px;
 }
 
@@ -291,7 +292,7 @@ header{
 
 .duende {
     position: absolute;
-    top:-85px;
+    top:-125px;
     right:0px;
     z-index: 906;
 }
@@ -308,7 +309,7 @@ header{
 }
 
 .cards{
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -328,6 +329,7 @@ header{
 
 .bannerGhost{
     position: relative;
+    top: -450px;
     z-index: 801;
 }
 
@@ -344,7 +346,6 @@ header{
 
 .demo01>img:hover{
     cursor:pointer;
-    animation: demo01 1s ease forwards;
 }
 
 .demo02{
@@ -354,7 +355,7 @@ header{
 }
 
 .demo02>img:hover{
-    animation: demo02 1s ease forwards;
+    cursor: pointer;
 }
 
 .demo03{
@@ -365,10 +366,16 @@ header{
 }
 
 .demo03>img:hover{
-    animation: demo03 1s ease forwards;
-    
+    cursor: pointer;  
 }
 
+.demoIn{
+    animation: demoIn 0.7s ease forwards;
+}
+
+.demoOut{
+    animation: demoOut 0.7s ease forwards;
+}
 .vengadores{
     padding-top: 250px;
     top: -100px;
@@ -457,11 +464,7 @@ header{
     top:150px;
     width: 550px;
     opacity: 0;
-    transition: opacity 0.8s ease;
-}
-
-.showImgSticky{
-    animation: stickyCard 2s ease-in-out forwards;
+    transition: opacity 0.7s ease-in-out;
 }
 
 .imgSticky img{
@@ -470,6 +473,12 @@ header{
 
 .stickyText{
     padding: 100px 0;
+    width: 470px;
+    transition: opacity 1s ease-in-out;
+}
+
+.stickyText:first-child{
+    margin-top: 100px;
 }
 
 /* .stickyCard{
@@ -491,18 +500,18 @@ header{
 }
 
 .stickyText{
-    width: 470px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+*/
 
 .stickyText h3{
     font-size: 40px;
     font-weight:normal;
     margin-bottom: 20px;
-} */
+} 
 
 .separador03{
     position: relative;
@@ -648,6 +657,22 @@ header{
     width: 100%;
 }
 
+.spriteSheet{
+    position: absolute;
+    bottom: 100px;
+    left:550px;
+    width: 80px;
+    height: 90px;
+    background: url('../img/sprite.png') left center;
+    animation: caminar 1s steps(9) infinite ;
+}
+
+.spriteSheet:hover{
+    background: url('../img/sprite2.png') left center;
+    animation: susto 1s steps(12) infinite ;
+}
+
+
 .separadorFooter {
     position: relative;
     background: #242424;
@@ -721,29 +746,38 @@ header{
     }
 }
 
-@keyframes demo01{
+@keyframes demoIn{
     0%{
         transform: skew(0, 0);
     }
     100%{
-        transform: skew(-0.02turn, 1deg);
+        transform: skew(0.03turn, 2deg);
     }
 }
 
-@keyframes demo02{
+@keyframes demoOut{
     0%{
-        transform: skew(0, 0);
+        transform: skew(0.03turn, 2deg);
     }
     100%{
-        transform: skew(0.01turn, 2deg);
+        transform: skew(0, 0);
     }
 }
 
-@keyframes demo03{
+@keyframes caminar {
     0%{
-        transform: skew(0, 0);
+        background-position: 0px;
     }
-    100%{
-        transform: skew(-0.01turn, 4deg);
+    100% {
+        background-position: -720px;
+    }    
+}
+
+@keyframes susto {
+    0%{
+        background-position: 0px;
     }
+    100% {
+        background-position: -960px;
+    }    
 }
