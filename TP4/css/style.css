@@ -139,7 +139,21 @@ header{
     background-color: #FFE901;
     border: 4px solid #2981FF;
     border-radius: 10px;
+    transition: all 0.6s ease;
+    transform-origin: left;
     
+}
+
+.barra01_x {
+    rotate: 33deg;    
+}
+
+.barra02_x {
+    opacity: 0;
+}
+
+.barra03_x{
+    rotate: -33deg;    
 }
 
 .btn{
@@ -156,6 +170,16 @@ header{
     flex-shrink: 0;    
     -webkit-text-stroke: 2px;
 }
+
+button.btn{
+    overflow: hidden;
+}
+
+button.btn:hover{
+    animation: tembleke 0.5s ease-in-out forwards;
+    cursor:pointer;
+}
+
 
 .btnComprar{    
     width: 200px;
@@ -310,6 +334,7 @@ header{
 
 .cards{
     margin-top: 200px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -781,3 +806,47 @@ header{
         background-position: -960px;
     }    
 }
+
+@keyframes tembleke {
+    0% { 
+      transform: rotate(3deg);
+      transform: scale(100%);
+      color: #02187E;
+    }
+    10%{
+        transform: rotate(-3deg);
+        transform: scale(104%);
+    }
+    20%{
+        transform: rotate(3deg);
+        transform: scale(108%);
+    }
+    30%{
+        transform: rotate(-3deg);
+        transform: scale(112%);
+    }
+    40%{
+        transform: rotate(3deg);        
+    }
+    50% {
+     transform: rotate(-3deg);     
+     color:#027e2f
+    }
+    60%{
+        transform: rotate(-3deg);
+    }
+    70% {
+      transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-3deg);
+    }
+    90% {
+        transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(0deg);
+      transform: scale(100%);
+      color: #02187E ;
+    }
+  }
